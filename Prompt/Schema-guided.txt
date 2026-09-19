@@ -1,0 +1,61 @@
+Generate a precise UML class diagram from the following Java/ Python source code.
+
+Requirements:
+1. Define each class and interface only once.
+2. Include all attributes (with types) and methods.
+3. Include all relationships: Inheritance, Realization, Dependency, Association, Composition, Aggregation.
+4. Do not duplicate any class, method, attribute, or relationship.
+5. Do not invent any element that does not exist in the given code.
+6. Return ONLY a valid JSON object. Do not write any explanation, markdown, or extra text.
+
+Return ONLY a valid JSON object with exactly this structure:
+
+{
+  "classes": [
+    {
+      "classOrInterface": "Class or Interface",
+      "name": "",
+      "visibility": "",
+      "isStatic": false,
+      "isAbstract": false,
+      "constructors": [
+        {
+          "visibility": "",
+          "parameters": []
+        }
+      ],
+      "variables": [
+        {
+          "name": "",
+          "type": "",
+          "visibility": "",
+          "isStatic": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "",
+          "visibility": "",
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "",
+          "parameters": []
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationship": "",
+      "source": "",
+      "target": "",
+      "multiplicity1": "",
+      "role1": "",
+      "multiplicity2": "",
+      "role2": ""
+    }
+  ]
+}
+
+Java/ Python code:
+{code_content}

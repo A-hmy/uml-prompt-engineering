@@ -1,0 +1,28 @@
+PROMPT 1:
+Analyze the following Java/ Python source code to prepare a UML class diagram.
+
+Requirements:
+1. Define each class and interface only once.
+2. Include all attributes (with types) and methods.
+3. Include all relationships: Inheritance, Realization, Dependency, Association, Composition, Aggregation.
+4. Do not duplicate any class, method, attribute, or relationship.
+5. Do not invent any element that does not exist in the given code.
+
+Java/ Python code:
+{code_content}
+Think step by step and write only your step-by-step reasoning.
+
+PROMPT 2:
+Here is your step-by-step reasoning about the Java source code:
+
+{step1_response}
+
+Now, based on the above reasoning, generate the final UML class diagram.
+
+Requirements:
+1. Define each class and interface only once.
+2. Include all attributes (with types) and methods.
+3. Include all relationships: Inheritance, Realization, Dependency, Association, Composition, Aggregation.
+4. Do not duplicate any class, method, attribute, or relationship.
+5. Do not invent any element that does not exist in the given code or in the reasoning above.
+6. Return ONLY a valid JSON object. No explanation, no markdown, no extra text.

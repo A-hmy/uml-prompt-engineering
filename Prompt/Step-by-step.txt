@@ -1,0 +1,50 @@
+JAVA:
+Generate a concise UML class diagram from the following Java source code.
+
+Follow these steps in order to build your answer:
+Step 1: Identify every class and interface in the code, and determine its type (Class or Interface).
+Step 2: For each class/interface, extract its attributes (with types). Include visibility, abstract, and static ONLY if explicitly written in the code.
+Step 3: For each class/interface, extract its methods. Same rule: report modifiers only if explicit.
+Step 4: Identify constructors ONLY if explicitly written (do not assume default constructors).
+Step 5: Identify Inheritance relationships (child → parent) wherever "extends" appears.
+Step 6: Identify Realization relationships (class → interface) wherever "implements" appears.
+Step 7: Identify Association, Aggregation, Composition, and Dependency relationships based on field types and usage — only when explicitly supported by the code. Determine the correct direction (Source → Target) for each.
+Step 8: Add multiplicities and roles ONLY if explicitly written in the code.
+Step 9: Review your result — remove any class, method, attribute, or relationship that does not actually exist in the code.
+Step 10: Review your result — remove any duplicate entries.
+
+After completing all steps above, output the final result.
+
+Requirements for the output:
+- Return ONLY a valid JSON object.
+- No explanation, no markdown, no extra text, no mention of the steps.
+
+Java code:
+{code_content}
+
+PYTHON:
+
+Generate a concise UML class diagram from the following Python source code.
+
+Follow these steps in order to build your answer:
+Step 1: Identify every class and interface in the code, and determine its type (Class or Interface). Include visibility, abstract, and static ONLY if explicitly written in the code.
+Step 2: For each class/interface, extract its attributes (with types). Include visibility, abstract, and static ONLY if explicitly written in the code.
+Step 3: For each class/interface, extract its methods. Same rule: report modifiers only if explicit.
+Step 4: Identify constructors ONLY if explicitly written (do not assume default constructors).
+Step 5: Identify Inheritance relationships (child → parent) wherever the class is defined as class Child(Parent):.
+Step 6: Identify Realization relationships (class → interface) wherever the class is defined as class Child(Parent): and the parent qualifies as an interface.
+Step 7: Identify Association, Aggregation, Composition, and Dependency relationships based on field types and usage — only when explicitly supported by the code. Determine the correct direction (Source → Target) for each.
+Step 8: Add multiplicities and roles ONLY if explicitly written in the code.
+Step 9: Review your result — remove any class, method, attribute, or relationship that does not actually exist in the code.
+Step 10: Review your result — remove any duplicate entries.
+
+After completing all steps above, output the final result.
+
+Requirements for the output:
+- Return ONLY a valid JSON object.
+- No explanation, no markdown, no extra text, no mention of the steps.
+
+Python code:
+{code_content}
+
+

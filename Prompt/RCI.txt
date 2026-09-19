@@ -1,0 +1,23 @@
+PROMPT 1:
+Review the following UML class diagram, which was generated from the given Java/Python source code, and find problems with it.
+
+Java/ Python code:
+{code_content}
+
+Generated diagram JSON:
+{previous_json}
+
+Compare the generated diagram JSON with the source code and report a list of any missing, invented, or incorrectly stated details needed for a UML class diagram, based only on what is explicitly written in the code.
+
+PROMPT 2:
+Improve the following UML class diagram JSON based only on the critique below.
+
+Fix only the issues mentioned in the critique, without adding or removing any elements unless the critique requires it, and keep everything else unchanged.
+
+Critique:
+{review_response}
+
+Previous diagram JSON:
+{previous_json}
+
+Return ONLY the improved JSON object. No explanation or extra text.

@@ -1,0 +1,38 @@
+JAVA:
+Generate a concise UML class diagram from the following Java source code.
+
+CRITICAL GENERAL RULE:
+Never guess or assume anything. Only report a value if it is explicitly written in the code. 
+Do not use Java naming conventions, common style, or typical patterns (for example, do not assume fields are private or methods are public). 
+If a modifier or detail is not written in the code, leave it as default or empty — never invent it.
+
+Requirements:
+1. Define each class and interface only once.
+2. Include all attributes (with types) and methods.
+3. Include all relationships: Inheritance, Realization, Dependency, Association, Composition, Aggregation.
+4. Do not duplicate any class, method, attribute, or relationship.
+5. Do not invent any element that does not exist in the given code.
+6. Return ONLY a valid JSON object. Do not write any explanation, markdown, or extra text.
+
+Java code:
+{code_content}
+
+
+PYTHON:
+
+Generate a concise UML class diagram from the following python source code.
+
+CRITICAL GENERAL RULE:
+Never guess or assume anything. Only report a value if it is explicitly written in the code. 
+If a detail is not written in the code, leave it as default or empty — never invent it.
+
+Requirements:
+1. Define each class and interface only once.
+2. Include all attributes (with types) and methods.
+3. Include all relationships: Inheritance, Realization, Dependency, Association, Composition, Aggregation.
+4. Do not duplicate any class, method, attribute, or relationship.
+5. Do not invent any element that does not exist in the given code.
+6. Return ONLY a valid JSON object. Do not write any explanation, markdown, or extra text.
+
+python code:
+{code_content}

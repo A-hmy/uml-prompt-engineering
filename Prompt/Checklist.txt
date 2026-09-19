@@ -1,0 +1,54 @@
+JAVA:
+
+Generate a concise UML class diagram from the following Java source code.
+
+Requirements:
+1. Define each class and interface only once.
+2. Include all attributes (with types) and methods.
+3. Include all relationships: Inheritance, Realization, Dependency, Association, Composition, Aggregation.
+4. Do not duplicate any class, method, attribute, or relationship.
+5. Do not invent any element that does not exist in the given code.
+6. Return ONLY a valid JSON object. No explanation, no markdown, no extra text.
+
+Before producing the final JSON, internally check this list:
+- Every class and interface is included with correct type (Class / Interface)
+- For classes, attributes, and methods: report visibility, abstract, and static only when explicitly written in the code
+- Attributes and methods are grouped under the class they belong to
+- Constructors are included only if explicitly written (no default constructors)
+- Inheritance: child → parent when "extends" is present
+- Realization: class → interface when "implements" is present
+- Other relationships (Association, Aggregation, Composition, Dependency) are detected from field types and usage only when explicitly supported by the source code.
+- Multiplicities and roles are added only if explicitly written
+- Verify that every relationship has the correct direction (Source → Target) as explicitly supported by the source code.
+- Verify that the output contains no additional elements. 
+
+Java code:
+{code_content}
+
+PYTHON:
+
+Generate a concise UML class diagram from the following Python source code.
+
+ Requirements:
+ 1. Define each class and interface only once.
+ 2. Include all attributes (with types) and methods.
+ 3. Include all relationships: Inheritance, Realization, Dependency, Association, Composition, Aggregation.
+ 4. Do not duplicate any class, method, attribute, or relationship.
+ 5. Do not invent any element that does not exist in the given code.
+ 6. Return ONLY a valid JSON object. No explanation, no markdown, no extra text.
+
+ Before producing the final JSON, internally check this list:
+ - Every class and interface is included with correct type (Class / Interface)
+ - For classes, attributes, and methods: report visibility, abstract, and static only when explicitly written in the code
+ - Attributes and methods are grouped under the class they belong to
+ - Constructors are included only if explicitly written (no default constructors)
+ - Inheritance: child → parent when the class is defined as class Child(Parent):
+ - Realization: class → interface when the class inherits from an abstract base class
+ - Other relationships (Association, Aggregation, Composition, Dependency) are detected from field types and usage only when explicitly supported by the source code.
+ - Multiplicities and roles are added only if explicitly written
+ - Verify that every relationship has the correct direction (Source → Target) as explicitly supported by the source code.
+ - Verify that the output contains no additional elements.
+
+ Python code:
+ {code_content}
+

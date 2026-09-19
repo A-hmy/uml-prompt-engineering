@@ -1,0 +1,13 @@
+Generate a concise UML class diagram from the following Java/ Python source code.
+
+Requirements:
+1. Define each class and interface only once.
+2. Include all attributes (with types) and methods.
+3. Include all relationships: Inheritance, Realization, Dependency, Association, Composition, Aggregation.
+4. Do not duplicate any class, method, attribute, or relationship.
+5. Do not invent any element that does not exist in the given code.
+6. Return ONLY a valid JSON object. Do not write any explanation, markdown, or extra text.
+
+Before returning the diagram, compare the generated diagram JSON with the source code and fix any missing, invented, or incorrectly stated details needed for a UML class diagram, based only on what is explicitly written in the code.
+Java/ Python code:
+{code_content}

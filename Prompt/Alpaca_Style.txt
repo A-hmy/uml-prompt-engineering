@@ -1,0 +1,9 @@
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+### Instruction:
+Generate a concise UML class diagram for the provided Java/ Python code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+### Input:
+{code_content}
+### Response:
