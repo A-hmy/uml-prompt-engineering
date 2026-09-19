@@ -1,0 +1,92 @@
+<think>
+Okay, I need to generate a UML class diagram from the given Python code. Let me start by understanding the code step by step.
+
+First, I see that the code imports ABC and abstractmethod from the abc module. This suggests that there's an abstract base class involved. Then, there's a class Worker defined, which inherits from ABC. The __init__ method takes full_name and income, and assigns them to instance variables. So, the Worker class has these attributes.
+
+Next, there's an abstract method work() defined in Worker. Since it's abstract, any class inheriting from Worker must implement it. The show_name() method returns a string with the full name, and is_high_income() checks if the income is greater than 3000.
+
+Then, there's a Developer class that inherits from Worker. The work() method in Developer overrides the abstract method from Worker, returning a string with the developer's name and the action of coding. So, Developer has all the attributes and methods of Worker plus its own work() implementation.
+
+The code then creates an instance of Developer with name "John" and income 3500. It prints the name using show_name(), the work() output, and checks if the income is high.
+
+Now, to create the UML diagram. I'll start by listing all classes. There's Worker and Developer. Worker is an abstract class, so I'll note that. The Developer class extends Worker.
+
+Looking at the attributes: Worker has full_name and income. Developer doesn't add any new attributes, so it inherits these.
+
+Methods: Worker has __init__, show_name, is_high_income, and work (abstract). Developer has work() overridden, so it's not abstract anymore.
+
+Relationships: Developer inherits from Worker, so there's an inheritance relationship. No other relationships like composition or aggregation are present in the code.
+
+I need to make sure each element is only included once. No interfaces are defined here, so I don't need to include any. All attributes and methods are accounted for without duplication.
+
+So, the UML will have two classes, Worker and Developer, with the inheritance line between them. Attributes with their types, methods with visibility, and the abstract method noted for Worker.
+
+I think that's all. I'll structure the JSON accordingly, ensuring all details are captured without any extra explanations.
+</think>
+
+```json
+{
+  "classes": [
+    {
+      "name": "Worker",
+      "attributes": [
+        {
+          "name": "full_name",
+          "type": "str"
+        },
+        {
+          "name": "income",
+          "type": "int"
+        }
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "parameters": [
+            {
+              "name": "full_name",
+              "type": "str"
+            },
+            {
+              "name": "income",
+              "type": "int"
+            }
+          ]
+        },
+        {
+          "name": "show_name",
+          "return_type": "str"
+        },
+        {
+          "name": "is_high_income",
+          "return_type": "bool"
+        },
+        {
+          "name": "work",
+          "abstract": true
+        }
+      ]
+    },
+    {
+      "name": "Developer",
+      "parent": "Worker",
+      "attributes": [],
+      "methods": [
+        {
+          "name": "work",
+          "return_type": "str"
+        }
+      ]
+    }
+  ],
+  "associations": [],
+  "inheritance": [
+    {
+      "from": "Developer",
+      "to": "Worker"
+    }
+  ],
+  "compositions": [],
+  "aggregations": []
+}
+```

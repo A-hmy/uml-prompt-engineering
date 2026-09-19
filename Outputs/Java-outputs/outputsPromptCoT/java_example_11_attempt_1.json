@@ -1,0 +1,85 @@
+<think>
+Okay, so I need to create a UML class diagram based on the given Java code. Let me start by understanding what the code has.
+
+First, there's the Device class. It's a base class, so it should be at the top of the hierarchy. It has a method called powerOn(). I should note that as a method in the class.
+
+Next, there's LaserPrinter, which extends Device. That means it's a subclass, so in the UML, it will be a child of Device. LaserPrinter also implements the Printer interface. So I need to include that interface and its method, printDocument().
+
+Then there's the Main class, which is the main application. It has a main() method. Since main is a method, I'll include it in the class.
+
+Now, looking at the relationships. LaserPrinter extends Device, so that's an inheritance relationship. It also implements Printer, so that's a realization relationship. Main creates an instance of LaserPrinter, so there's an association between Main and LaserPrinter.
+
+I should make sure each class and interface is defined only once. So Device, LaserPrinter, Printer, and Main are all separate. The attributes are the methods, so I'll list them with their visibility.
+
+I don't see any dependencies or compositions beyond the inheritance and realization. So the main relationships are inheritance, realization, and association.
+
+Putting it all together, the UML should show Device at the top, LaserPrinter below it with the inheritance and realization, and Main associated with LaserPrinter. I'll structure the JSON accordingly, making sure each element is included without duplication.
+</think>
+
+```json
+{
+  "classes": [
+    {
+      "name": "Device",
+      "attributes": [
+        {
+          "name": "powerOn",
+          "visibility": "public",
+          "type": "void"
+        }
+      ]
+    },
+    {
+      "name": "LaserPrinter",
+      "parent": "Device",
+      "attributes": [
+        {
+          "name": "printDocument",
+          "visibility": "public",
+          "type": "void"
+        }
+      ]
+    },
+    {
+      "name": "Main",
+      "attributes": [
+        {
+          "name": "main",
+          "visibility": "public",
+          "type": "void"
+        }
+      ]
+    }
+  ],
+  "interfaces": [
+    {
+      "name": "Printer",
+      "methods": [
+        {
+          "name": "printDocument",
+          "visibility": "public",
+          "type": "void"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "type": "inheritance",
+      "source": "LaserPrinter",
+      "target": "Device"
+    },
+    {
+      "type": "realization",
+      "source": "LaserPrinter",
+      "target": "Printer"
+    },
+    {
+      "type": "association",
+      "source": "Main",
+      "target": "LaserPrinter",
+      "cardinality": "one"
+    }
+  ]
+}
+```

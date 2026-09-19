@@ -1,0 +1,66 @@
+<think>
+Okay, so I need to generate a UML class diagram from the given Python code. Let me start by understanding what each part of the code does.
+
+First, there's the Product class. It has an __init__ method that takes a quantity and assigns it to self.quantity. Then, there's a get_quantity method that returns self.quantity. So, Product has an attribute quantity of type int and a method get_quantity().
+
+Next, there's the Factory class. It has a build_product method that returns a Product instance with a quantity of 13. So, Factory has a method build_product() which returns a Product.
+
+Looking at the usage, a Factory instance is created, and build_product() is called, which returns a Product. Then, product.get_quantity() is called to retrieve the quantity.
+
+Now, for the UML diagram:
+
+- I'll start by listing all classes. There are two: Product and Factory.
+- Interfaces: I don't see any in the code, so none are included.
+- Attributes: Product has quantity (int). Factory doesn't have any attributes since it doesn't have an __init__ method.
+- Methods: Product has get_quantity(). Factory has build_product().
+- Relationships: Product is created by Factory. So, Factory realizes Product. Also, the instance variables and method calls show that Factory depends on Product.
+
+I need to make sure I include all relationships. Since Factory's build_product() returns a Product, that's a realization (dependency) relationship. Also, the instance variables and method calls indicate that Factory depends on Product.
+
+I should structure the classes with their attributes and methods, and draw the realization arrow from Factory to Product. Also, note the dependencies via the instance variables and method calls.
+
+I think that's all. No interfaces, no inheritance, just realization and dependency.
+</think>
+
+```json
+{
+  "classes": [
+    {
+      "name": "Product",
+      "attributes": [
+        {
+          "name": "quantity",
+          "type": "int"
+        }
+      ],
+      "methods": [
+        {
+          "name": "get_quantity",
+          "return_type": "void"
+        }
+      ]
+    },
+    {
+      "name": "Factory",
+      "methods": [
+        {
+          "name": "build_product",
+          "return_type": "Product"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Factory",
+      "target": "Product",
+      "type": "realization"
+    },
+    {
+      "source": "Factory",
+      "target": "Product",
+      "type": "dependency"
+    }
+  ]
+}
+```

@@ -1,0 +1,51 @@
+<think>
+Okay, so I need to create a UML class diagram based on the provided Java code. Let me go through the steps carefully.
+
+First, I'll look at the code. It's a single class called Employee. So, the class diagram should only have this one class.
+
+Next, I'll list the attributes. The code has four attributes: name, salary, age, and department. Their types are String, double, int, and String respectively. I'll make sure to include each attribute with its type.
+
+Then, I'll consider the methods. There's a method called displayDetails() which prints employee details. I'll add this method to the class.
+
+Now, checking for relationships. Since there are no other classes, interfaces, or any inheritance, composition, or associations mentioned, I don't need to include any relationships. The code doesn't show any other classes interacting with Employee, so the diagram will only have the Employee class.
+
+I need to make sure I don't duplicate anything. Each attribute and method is listed once. There are no interfaces or other classes, so nothing else is added.
+
+Finally, I'll structure this into a JSON object as required. The JSON should have a "classes" array with the Employee class, listing its attributes and methods. There are no relationships, so that section is empty.
+
+I think that's all. The UML diagram should accurately represent the Employee class with its attributes and method.
+</think>
+
+```json
+{
+  "classes": [
+    {
+      "class": "Employee",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "salary",
+          "type": "double"
+        },
+        {
+          "name": "age",
+          "type": "int"
+        },
+        {
+          "name": "department",
+          "type": "String"
+        }
+      ],
+      "methods": [
+        {
+          "name": "displayDetails"
+        }
+      ]
+    }
+  ],
+  "relationships": []
+}
+```

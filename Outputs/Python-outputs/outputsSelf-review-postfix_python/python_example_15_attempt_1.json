@@ -1,0 +1,76 @@
+<think>
+Okay, so I need to generate a UML class diagram from the given Python code. Let me start by understanding what each part of the code does.
+
+First, there's the Product class. It has an __init__ method that takes a quantity and assigns it to self.quantity. There's also a get_quantity method that returns self.quantity. So, Product has an attribute quantity of type int and a method get_quantity.
+
+Next, there's the Factory class. It has a build_product method that returns a Product instance with a quantity of 13. So, Factory has a method build_product that returns a Product.
+
+Looking at the usage, a Factory instance is created, and then build_product is called, which returns a Product. That product is then used to call get_quantity, which prints 13.
+
+Now, for the UML diagram. I need to include all classes, their attributes, methods, and relationships.
+
+Product is a class with attributes and methods. Factory is another class with a method. So, both Product and Factory are classes.
+
+The relationship between Factory and Product is that Factory builds a Product. So, Factory realizes Product. That means there's a Realization between Factory and Product.
+
+In the code, Factory's build_product method returns a Product. So, the Factory class depends on the Product class because it uses it to create an instance. So, there's a Dependency from Factory to Product.
+
+Looking at the code, Product doesn't inherit from anything, so it's not an inheritance relationship. Similarly, Factory doesn't inherit from Product or any other class, so no inheritance there.
+
+In terms of associations, the code creates instances of Factory and Product, but there's no direct association between them except through the build_product method. So, the only relationship is the Realization and Dependency.
+
+I don't see any composition or aggregation in the code. The Factory isn't composed of other objects, and Product doesn't contain other objects.
+
+So, the UML classes are Product and Factory. Product has an attribute quantity (int) and a method get_quantity(). Factory has a method build_product() that returns a Product.
+
+The Realization relationship is from Factory to Product because Factory realizes Product. The Dependency is from Factory to Product because Factory depends on Product to create an instance.
+
+I don't think there are any other relationships, so I'll include those two.
+
+I need to make sure each element is only included once and only if it's present in the code. So, no extra classes, methods, or relationships are added.
+
+Putting it all together, the UML diagram should show two classes, Product and Factory, with their respective attributes and methods, and the Realization and Dependency between them.
+</think>
+
+```json
+{
+  "classes": [
+    {
+      "name": "Product",
+      "attributes": [
+        {
+          "name": "quantity",
+          "type": "int"
+        }
+      ],
+      "methods": [
+        {
+          "name": "get_quantity",
+          "return_type": "int"
+        }
+      ]
+    },
+    {
+      "name": "Factory",
+      "methods": [
+        {
+          "name": "build_product",
+          "return_type": "Product"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "name": "Realization",
+      "source": "Factory",
+      "target": "Product"
+    },
+    {
+      "name": "Dependency",
+      "source": "Factory",
+      "target": "Product"
+    }
+  ]
+}
+```

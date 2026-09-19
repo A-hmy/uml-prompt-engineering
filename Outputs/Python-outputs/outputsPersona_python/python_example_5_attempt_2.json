@@ -1,0 +1,92 @@
+<think>
+Okay, so I need to create a UML class diagram from the given Python code. Let me start by understanding what the code does and what elements are present.
+
+First, I see that the code imports ABC and abstractmethod from the abc module. That probably means there's an abstract base class involved.
+
+Looking at the classes, there's Worker which inherits from ABC. So Worker is an abstract class. It has an __init__ method that takes full_name and income, and assigns them to instance variables. It also has a few methods: work(), show_name(), and is_high_income(). The work() method is abstract because it's marked with @abstractmethod, so all subclasses must implement it.
+
+Then there's Developer, which inherits from Worker. Developer has its own implementation of the work() method, which returns a string with the developer's full name and the action of coding. So Developer is a concrete subclass of Worker.
+
+Next, there's an instance of Developer called dev, initialized with "John" and 3500. Then some methods are called on dev: show_name(), work(), and is_high_income().
+
+Now, I need to translate this into a UML class diagram. Let me list out all the elements:
+
+- Classes: Worker, Developer
+- Interfaces: Since Worker is an abstract class, but in UML, abstract classes are just classes with no instances. So no interfaces here unless there's an explicit interface, which there isn't.
+- Attributes: For Worker, full_name (string), income (number). For Developer, since it's a subclass, it inherits these attributes.
+- Methods: Each method in Worker and Developer. Also, the abstract method work() in Worker.
+- Relationships: Developer inherits from Worker, so there's an inheritance relationship. The is_high_income() method in Worker is a query method, but in UML, that's an attribute or a method, but since it's a boolean, maybe it's a method.
+
+Wait, in UML, query methods are typically shown as methods. So I'll include is_high_income() as a method in Worker.
+
+The show_name() method returns a string, so that's another method.
+
+The work() method is abstract, so in UML, it's an abstract method in the Worker class.
+
+Now, putting it all together:
+
+- Class Worker: abstract class, with attributes full_name and income. Methods: work(), show_name(), is_high_income().
+- Class Developer: inherits from Worker, overrides work() with its own implementation. No additional attributes or methods beyond what's in Worker.
+
+Associations: Since Developer uses Worker's methods, the inheritance is clear. No other associations mentioned in the code, so no need for other relationships.
+
+I should make sure not to include any elements that aren't in the code. No interfaces are used here, just inheritance.
+
+So the UML will have two classes, Worker and Developer, with the necessary attributes and methods, showing the inheritance relationship.
+</think>
+
+```json
+{
+  "classes": [
+    {
+      "name": "Worker",
+      "attributes": [
+        {
+          "name": "full_name",
+          "type": "String"
+        },
+        {
+          "name": "income",
+          "type": "Number"
+        }
+      ],
+      "methods": [
+        {
+          "name": "work",
+          "parameters": [],
+          "return_type": "String",
+          "abstract": true
+        },
+        {
+          "name": "show_name",
+          "parameters": [],
+          "return_type": "String"
+        },
+        {
+          "name": "is_high_income",
+          "parameters": [],
+          "return_type": "Boolean"
+        }
+      ]
+    },
+    {
+      "name": "Developer",
+      "parent": "Worker",
+      "attributes": [],
+      "methods": [
+        {
+          "name": "work",
+          "parameters": [],
+          "return_type": "String"
+        }
+      ]
+    }
+  ],
+  "associations": [
+    {
+      "parent": "Worker",
+      "child": "Developer"
+    }
+  ]
+}
+```

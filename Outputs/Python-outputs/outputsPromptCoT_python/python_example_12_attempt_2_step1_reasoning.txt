@@ -1,0 +1,30 @@
+To create the UML class diagram, we analyze the Python code to identify all classes, their attributes, methods, and relationships.
+
+1. **Classes Identified**:
+   - **Product**: Contains `name` (str) and `link_container` method.
+   - **Container**: Contains `year_established` (int) and `link_product` method.
+
+2. **Methods**:
+   - **Product**:
+     - `link_container(self, container_instance)`: Assigns a Container instance to `container_instance`.
+   - **Container**:
+     - `link_product(self, product_instance)`: Assigns a Product instance to `product_instance`.
+
+3. **Relationships**:
+   - **Association**: Product and Container instances are linked in both directions via `link_container` and `link_product` methods, indicating a bidirectional association.
+
+**UML Class Diagram**:
+
+- **Class Product**:
+  - **Attribute**: `name` (String)
+  - **Method**: `link_container()`
+
+- **Class Container**:
+  - **Attribute**: `year_established` (Integer)
+  - **Method**: `link_product()`
+
+- **Association**:
+  - Product `--` Container `--` Product
+  - Container `--` Product `--` Container
+
+This diagram captures all classes, their attributes, methods, and the bidirectional association between Product and Container.

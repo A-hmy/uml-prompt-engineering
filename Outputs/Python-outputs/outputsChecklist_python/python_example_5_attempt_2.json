@@ -1,0 +1,91 @@
+<think>
+Okay, so I need to generate a UML class diagram from the given Python code. Let me start by understanding what the code does and what elements are present.
+
+First, I see that the code imports ABC and abstractmethod from the abc module. That probably means there's an abstract base class involved. Then, there's a class Worker defined, which inherits from ABC. So, Worker is an abstract class.
+
+Looking at the Worker class, it has an __init__ method that takes full_name and income, and assigns them to instance variables. It also has an abstract method work(), which is defined with @abstractmethod. So, work() must be implemented by any subclass.
+
+There's a method show_name() that returns a string with the full name. And is_high_income() checks if the income is greater than 3000. These are concrete methods, so they don't need to be overridden.
+
+Next, there's a Developer class that inherits from Worker. The work() method in Developer overrides the abstract method from Worker, returning a string with the developer's name and a message. So, Developer is a concrete subclass of Worker.
+
+Then, an instance of Developer is created with full_name "John" and income 3500. They print the show_name(), work(), and check if the income is high.
+
+Now, I need to translate this into a UML class diagram. Let's list out all the elements:
+
+1. Classes: Worker, Developer.
+2. Interfaces: Since Worker inherits from ABC, which is an abstract base class, but in Python, ABC is just a base class, not an interface. So, no interfaces here.
+3. Attributes: For Worker, full_name (string), income (number). For Developer, since it's a subclass, it inherits these attributes.
+4. Methods: show_name(), is_high_income() in Worker; work() in both Worker and Developer. Note that work() is abstract in Worker and implemented in Developer.
+5. Relationships: Inheritance between Developer and Worker. Also, since Worker is an abstract class, it's a base for Developer.
+
+I should check for any other relationships, like associations or compositions. Looking at the code, there are no other fields or methods that suggest such relationships. So, the main relationship is inheritance.
+
+I need to make sure each class is defined correctly. Worker is a class with attributes and methods, and Developer inherits from it. No interfaces are involved here, so the Realization relationship doesn't apply.
+
+I should also note the visibility of attributes and methods. In Python, if they're defined without a modifier, they're public. So, all attributes and methods are public.
+
+Constructors are only for __init__, which is explicitly written, so that's included.
+
+I think that's all. Now, I'll structure this into a JSON object as per the requirements, making sure to include all classes, their attributes, methods, and the inheritance relationship.
+</think>
+
+```json
+{
+  "classes": [
+    {
+      "name": "Worker",
+      "type": "Class",
+      "attributes": [
+        {
+          "name": "full_name",
+          "type": "String"
+        },
+        {
+          "name": "income",
+          "type": "Number"
+        }
+      ],
+      "methods": [
+        {
+          "name": "show_name",
+          "visibility": "public",
+          "parameters": []
+        },
+        {
+          "name": "is_high_income",
+          "visibility": "public",
+          "parameters": []
+        }
+      ]
+    },
+    {
+      "name": "Developer",
+      "type": "Class",
+      "attributes": [
+        {
+          "name": "full_name",
+          "type": "String"
+        },
+        {
+          "name": "income",
+          "type": "Number"
+        }
+      ],
+      "methods": [
+        {
+          "name": "work",
+          "visibility": "public",
+          "parameters": []
+        }
+      ],
+      "inheritance": [
+        {
+          "parent": "Worker",
+          "direction": "general"
+        }
+      ]
+    }
+  ]
+}
+```

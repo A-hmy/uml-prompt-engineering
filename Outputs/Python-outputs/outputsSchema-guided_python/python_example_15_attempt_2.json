@@ -1,0 +1,103 @@
+<think>
+Okay, so I need to generate a UML class diagram from the given Python code. Let me start by understanding what the code does.
+
+First, I see two classes: Product and Factory. The Product class has an __init__ method that takes a quantity and stores it. There's also a get_quantity method that returns the stored quantity. The Factory class has a build_product method that returns a Product instance with a quantity of 13.
+
+Looking at the code, I need to make sure I capture all classes, their attributes, methods, and the relationships between them. The requirements specify that each element should be defined only once, so I shouldn't miss anything.
+
+Starting with the Product class. It's not an interface, so it's a regular class. The constructor takes a quantity, which is an integer, and assigns it to self.quantity. The get_quantity method is a public method that returns the quantity. So in the UML, Product will have a constructor with one parameter, and a method that returns an integer.
+
+Next, the Factory class. It has a build_product method that returns a Product. Since the method doesn't specify visibility, it's public. The build_product method creates a new Product with quantity 13. So in the UML, Factory will have a method that returns a Product.
+
+Now, looking at the relationships. The Factory class has a method that returns a Product, so there's a realization between Factory and Product. The Factory creates an instance of Product, so the multiplicity is 1 for both ends. Also, the code creates an instance of Factory and uses it to build a Product, but in the UML, I think the main relationship is between Factory and Product via the build_product method.
+
+I should also consider if there are any other relationships, like associations or compositions. In this case, it seems like the Factory is using the Product, so it's a realization. There's no composition or aggregation here because the Factory isn't containing the Product; it's just creating one.
+
+I need to make sure that all attributes and methods are included with their visibility. For the Product, the quantity is a private attribute since it's defined without a visibility modifier, so in UML, it's private. The methods are public.
+
+For the Factory, the build_product method is public, so it's included as such. There are no other methods or attributes to consider.
+
+I should also check if there are any static methods or variables. In the given code, everything is instance-based, so no static elements are present.
+
+Putting it all together, the UML should have two classes: Product and Factory. Product has a constructor and a method, while Factory has a method that returns a Product. The relationship is a realization from Factory to Product, with multiplicity 1.
+
+I think that's all. I don't see any interfaces or other classes, so the UML should be straightforward.
+</think>
+
+```json
+{
+  "classes": [
+    {
+      "classOrInterface": "Class",
+      "name": "Product",
+      "visibility": "public",
+      "isStatic": false,
+      "isAbstract": false,
+      "constructors": [
+        {
+          "visibility": "public",
+          "parameters": [
+            {
+              "name": "quantity",
+              "type": "int"
+            }
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "name": "quantity",
+          "type": "int",
+          "visibility": "private",
+          "isStatic": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "get_quantity",
+          "visibility": "public",
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "int",
+          "parameters": []
+        }
+      ]
+    },
+    {
+      "classOrInterface": "Class",
+      "name": "Factory",
+      "visibility": "public",
+      "isStatic": false,
+      "isAbstract": false,
+      "constructors": [
+        {
+          "visibility": "public",
+          "parameters": []
+        }
+      ],
+      "variables": [],
+      "methods": [
+        {
+          "name": "build_product",
+          "visibility": "public",
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "Product",
+          "parameters": []
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationship": "realization",
+      "source": "Factory",
+      "target": "Product",
+      "multiplicity1": "1",
+      "role1": "builds",
+      "multiplicity2": "1",
+      "role2": "produced"
+    }
+  ]
+}
+```

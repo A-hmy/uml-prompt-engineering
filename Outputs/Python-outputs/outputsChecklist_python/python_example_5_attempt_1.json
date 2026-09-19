@@ -1,0 +1,90 @@
+<think>
+Okay, so I need to generate a UML class diagram from the given Python code. Let me start by understanding what the code does and what elements are present.
+
+First, I see that the code imports ABC and abstractmethod from the abc module. That probably means there's an abstract base class involved. Then, there's a class Worker defined, which inherits from ABC. So, Worker is an abstract class.
+
+Looking at the Worker class, it has an __init__ method that takes full_name and income, and assigns them to instance variables. There's also an abstractmethod decorator on work(), which means work() is an abstract method that subclasses must implement. The show_name() method returns a string with the full name, and is_high_income() checks if the income is greater than 3000.
+
+Next, there's a Developer class that inherits from Worker. The Developer class overrides the work() method to return a string with the developer's full name and a message. There's an instance of Developer created with the name "John" and income 3500.
+
+So, the key elements here are the classes Worker and Developer, along with the interface ABC that Worker inherits from. The relationships are inheritance between Developer and Worker, and since Worker is an abstract class, it's an abstract base class.
+
+I need to represent this in UML. The classes will be nodes, with Worker having an abstract method, and Developer inheriting from Worker. The interface ABC is realized by Worker, so there's a realization relationship there.
+
+Attributes include full_name and income in both Worker and Developer, but since Developer doesn't add any new attributes, they inherit them. Methods are show_name(), work(), and is_high_income() in Worker, and the overridden work() in Developer.
+
+I should make sure not to include any default constructors since they're not explicitly written. Also, check for visibility, static, and abstract modifiers. In this case, methods like work() are abstract in Worker, so I'll note that.
+
+In the JSON, each class will have its attributes and methods, with visibility and modifiers as per the code. Relationships will be captured as inheritance, realization, and any other associations based on field types or usages.
+
+I think that's all. Now, I'll structure the JSON accordingly, ensuring all elements are included without duplication and relationships are correctly directed.
+</think>
+
+```json
+{
+  "classes": [
+    {
+      "name": "Worker",
+      "type": "Class",
+      "attributes": [
+        {
+          "name": "full_name",
+          "type": "str"
+        },
+        {
+          "name": "income",
+          "type": "int"
+        }
+      ],
+      "methods": [
+        {
+          "name": "show_name",
+          "visibility": "public",
+          "modifiers": []
+        },
+        {
+          "name": "is_high_income",
+          "visibility": "public",
+          "modifiers": []
+        },
+        {
+          "name": "work",
+          "visibility": "abstract",
+          "modifiers": []
+        }
+      ]
+    },
+    {
+      "name": "Developer",
+      "type": "Class",
+      "parent": "Worker",
+      "attributes": [],
+      "methods": [
+        {
+          "name": "work",
+          "visibility": "public",
+          "modifiers": []
+        }
+      ]
+    }
+  ],
+  "interfaces": [
+    {
+      "name": "ABC",
+      "type": "Interface"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Developer",
+      "target": "Worker",
+      "type": "Inheritance"
+    },
+    {
+      "source": "Worker",
+      "target": "ABC",
+      "type": "Realization"
+    }
+  ]
+}
+```

@@ -1,0 +1,101 @@
+<think>
+Okay, so I need to generate a UML class diagram from the given Python code. Let me go through the steps one by one.
+
+First, I'll look at the code. It starts by importing ABC and abstractmethod from the abc module. Then there's a class GeometricFigure which inherits from ABC. It has an abstract method area. Next, there's a Square class that inherits from GeometricFigure. Square has an __init__ method that takes side_length and assigns it to an instance variable. It also overrides the area method to return side_length squared and adds a perimeter method.
+
+Step 1: Identify classes and interfaces. GeometricFigure is a class, and ABC is an interface. Square is another class.
+
+Step 2: Extract attributes. For GeometricFigure, since it's an abstract class, it doesn't have any attributes. Square has side_length, which is an integer and public.
+
+Step 3: Extract methods. GeometricFigure has an abstract area method. Square has __init__, area, and perimeter. The area method is overridden, so I should note that.
+
+Step 4: Identify constructors. Square has an explicit __init__ method, so that's noted.
+
+Step 5: Inheritance. Square inherits from GeometricFigure, so that's a child to parent relationship.
+
+Step 6: Realization. Since GeometricFigure is an interface (because it inherits from ABC), Square realizes it.
+
+Step 7: Associations. Looking at the attributes, Square has side_length, which is an integer. There are no other fields that reference other classes, so no associations here.
+
+Step 8: Multiplicities. Since side_length is a single value, the multiplicity is 1. No roles are mentioned, so nothing to add there.
+
+Step 9: Remove non-existent elements. All classes and methods are present in the code, so nothing to remove.
+
+Step 10: Remove duplicates. All entries are unique.
+
+Putting it all together, the UML diagram should show GeometricFigure as an abstract class with an abstract method area. Square inherits from GeometricFigure and has an __init__ method, area, and perimeter. The realization relationship is from Square to GeometricFigure.
+</think>
+
+```json
+{
+  "classes": [
+    {
+      "name": "GeometricFigure",
+      "type": "Class",
+      "attributes": [],
+      "methods": [
+        {
+          "name": "area",
+          "visibility": "public",
+          "abstract": true
+        }
+      ]
+    },
+    {
+      "name": "Square",
+      "type": "Class",
+      "attributes": [
+        {
+          "name": "side_length",
+          "type": "int",
+          "visibility": "public"
+        }
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "parameters": [
+            "self",
+            "side_length"
+          ],
+          "visibility": "public"
+        },
+        {
+          "name": "area",
+          "visibility": "public",
+          "overrides": "GeometricFigure.area"
+        },
+        {
+          "name": "perimeter",
+          "visibility": "public"
+        }
+      ]
+    }
+  ],
+  "interfaces": [
+    {
+      "name": "ABC",
+      "type": "Interface",
+      "methods": [
+        {
+          "name": "area",
+          "visibility": "public",
+          "abstract": true
+        }
+      ]
+    }
+  ],
+  "inheritance": [
+    {
+      "from": "Square",
+      "to": "GeometricFigure"
+    }
+  ],
+  "realization": [
+    {
+      "from": "Square",
+      "to": "ABC"
+    }
+  ]
+}
+```

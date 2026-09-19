@@ -1,0 +1,57 @@
+<think>
+Okay, so I need to create a UML class diagram from the given Python code. Let me start by understanding what each part of the code does.
+
+First, there's the Product class. It has an __init__ method that takes a quantity and assigns it to self.quantity. There's also a get_quantity method that returns self.quantity. So, Product has an attribute quantity of type int and a method get_quantity().
+
+Next, there's the Factory class. It has a build_product method that returns a Product instance with a quantity of 13. So, Factory has a method build_product() which returns a Product.
+
+Looking at the usage, a Factory instance is created, and then build_product() is called, which returns a Product. That product is then used to call get_quantity(), which prints 13.
+
+Now, for the UML diagram. I need to include all classes, their attributes, methods, and relationships.
+
+Product is a class with an attribute quantity (int) and method get_quantity(). Factory is another class with a method build_product() that returns a Product. So, there's a realization relationship between Factory and Product because Factory creates instances of Product.
+
+I should also consider any other relationships. Since Factory builds a Product, it's a clear realization. There are no inheritance relationships here; both classes are at the same level. There are no composite or aggregate relationships because neither contains the other. It's a simple association through the build_product() method.
+
+So, in the UML, I'll have two classes: Product and Factory. Product has the attribute and method, Factory has the method that returns Product. The realization is from Factory to Product.
+
+I need to make sure I don't include any unnecessary elements. No interfaces are present here, so only classes. All attributes and methods are explicitly in the code, so they should be included. Relationships are only the realization between Factory and Product.
+
+I think that's all. Let me structure this into a JSON object as per the requirements.
+</think>
+
+{
+  "classes": [
+    {
+      "name": "Product",
+      "attributes": [
+        {
+          "name": "quantity",
+          "type": "int"
+        }
+      ],
+      "methods": [
+        {
+          "name": "get_quantity",
+          "return_type": "void"
+        }
+      ]
+    },
+    {
+      "name": "Factory",
+      "methods": [
+        {
+          "name": "build_product",
+          "return_type": "Product"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "Factory",
+      "to": "Product",
+      "type": "realization"
+    }
+  ]
+}

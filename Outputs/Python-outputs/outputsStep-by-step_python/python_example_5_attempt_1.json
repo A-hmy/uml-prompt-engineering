@@ -1,0 +1,125 @@
+<think>
+Okay, so I need to generate a UML class diagram from the given Python code. Let me go through the steps one by one.
+
+First, I'll look at the code. It starts by importing ABC and abstractmethod from the abc module. Then there's a class Worker defined, which inherits from ABC. So Worker is an abstract class. It has an __init__ method that takes full_name and income, and assigns them to instance variables. There's also an abstract method work(), which is not implemented here. Then there are two methods: show_name(), which returns a string with the full name, and is_high_income(), which checks if the income is greater than 3000.
+
+Next, there's a Developer class that inherits from Worker. The Developer class overrides the work() method to return a string with the developer's full name and the action of coding. There's an instance of Developer created with "John" and 3500, and some methods are called on it.
+
+Step 1: Identify classes and interfaces. The code defines Worker and Developer as classes. Worker inherits from ABC, which is an interface. So ABC is an interface, and Worker is a class that implements it. Developer is a class that inherits from Worker.
+
+Step 2: Extract attributes. For Worker, full_name and income are instance variables. They are public since there's no __init__ modifying their visibility. For Developer, since it doesn't have its own __init__, it inherits the same attributes from Worker.
+
+Step 3: Extract methods. Worker has show_name(), is_high_income(), and work() which is abstract. Developer has work() overridden. The methods in Worker are public because they don't have a minus sign. The abstract method is marked with @abstractmethod, so it's abstract.
+
+Step 4: Identify constructors. The __init__ method is explicit, so that's a constructor for both Worker and Developer. Since Developer doesn't have its own __init__, it uses Worker's.
+
+Step 5: Inheritance relationships. Developer inherits from Worker, so the relationship is Developer → Worker.
+
+Step 6: Realization relationships. Since Worker is an interface, and Developer implements it, the relationship is Developer → Worker (Interface).
+
+Step 7: Association, Aggregation, etc. Looking at the attributes, Worker has full_name and income. full_name is a string, so it's an association to String. income is a number, so another association. The Developer instance uses these, but there's no explicit composition or aggregation. There are no other fields, so no other relationships.
+
+Step 8: Multiplicities and roles. Since the code doesn't specify any, I don't include them.
+
+Step 9: Remove non-existent elements. All classes and methods are present in the code.
+
+Step 10: Remove duplicates. No duplicates here.
+
+So, putting it all together, the UML diagram will have two classes: Worker and Developer. Worker is an abstract class implementing an interface ABC, with attributes and abstract method. Developer inherits from Worker and overrides work(). The attributes are as defined, with their types. The relationships are inheritance and realization.
+</think>
+
+```json
+{
+  "classes": [
+    {
+      "name": "Worker",
+      "type": "Class",
+      "attributes": [
+        {
+          "name": "full_name",
+          "type": "String",
+          "visibility": "public"
+        },
+        {
+          "name": "income",
+          "type": "Number",
+          "visibility": "public"
+        }
+      ],
+      "methods": [
+        {
+          "name": "show_name",
+          "modifiers": []
+        },
+        {
+          "name": "is_high_income",
+          "modifiers": []
+        },
+        {
+          "name": "work",
+          "modifiers": [
+            "abstract"
+          ]
+        }
+      ],
+      "constructors": [
+        {
+          "name": "__init__",
+          "parameters": [
+            "full_name",
+            "income"
+          ]
+        }
+      ],
+      "interfaces": [
+        "ABC"
+      ]
+    },
+    {
+      "name": "Developer",
+      "type": "Class",
+      "attributes": [
+        {
+          "name": "full_name",
+          "type": "String",
+          "visibility": "public"
+        },
+        {
+          "name": "income",
+          "type": "Number",
+          "visibility": "public"
+        }
+      ],
+      "methods": [
+        {
+          "name": "work",
+          "modifiers": []
+        }
+      ],
+      "constructors": [
+        {
+          "name": "__init__",
+          "parameters": [
+            "full_name",
+            "income"
+          ]
+        }
+      ],
+      "superclass": "Worker"
+    }
+  ],
+  "relationships": [
+    {
+      "parent": "Developer",
+      "child": "Worker",
+      "type": "Inheritance"
+    },
+    {
+      "parent": "Developer",
+      "child": "Worker",
+      "type": "Realization",
+      "interface": "ABC"
+    }
+  ]
+}
+```

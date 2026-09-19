@@ -1,0 +1,150 @@
+```json
+{
+  "classes": [
+    {
+      "name": "Worker",
+      "attributes": [
+        {
+          "name": "full_name",
+          "type": "str"
+        },
+        {
+          "name": "income",
+          "type": "int"
+        }
+      ],
+      "methods": [
+        {
+          "name": "work",
+          "parameters": [],
+        },
+        {
+          "name": "show_name",
+          "parameters": [],
+        },
+        {
+          "name": "is_high_income",
+          "parameters": [],
+        }
+      ],
+      "superclass": "ABC"
+    },
+    {
+      "name": "Developer",
+      "attributes": [
+        {
+          "name": "full_name",
+          "type": "str"
+        },
+        {
+          "name": "income",
+          "type": "int"
+        }
+      ],
+      "methods": [
+        {
+          "name": "work",
+          "parameters": [],
+        },
+        {
+          "name": "show_name",
+          "parameters": [],
+        }
+      ],
+      "superclass": "Worker"
+    }
+  ],
+  "associations": [
+    {
+      "class1": "Worker",
+      "class2": "Developer",
+      "type": "inheritance",
+      "direction": "general"
+    }
+  ]
+}
+```
+
+Okay, so I need to generate a UML class diagram for the provided Python code. Let me start by understanding the code structure.
+
+First, I see that there's an import from abc, which I know is for abstract base classes. Then, there's a class Worker defined, which inherits from ABC. The __init__ method takes full_name and income, assigning them to instance variables. The work method is abstract, so it's left to be implemented by subclasses. There's also a show_name method that returns a string with the full name, and an is_high_income method that checks if the income is over 3000.
+
+Next, there's a Developer class that inherits from Worker. The work method here is overridden to return a specific string. There's an instance of Developer created with John and 3500, and some methods are called on it.
+
+So, for the UML diagram, I need to represent each class and their relationships. Worker is an abstract class, so I'll note that. Developer extends Worker, so there's an inheritance relationship. Both classes have the same attributes: full_name and income. The methods each have are work, show_name, and is_high_income for Worker, and work and show_name for Developer since it doesn't override is_high_income.
+
+I should make sure each class is defined once. The attributes and methods should be listed without duplication. The associations should include the inheritance between Worker and Developer. I don't see any other relationships like composition or aggregation here, so I'll focus on the inheritance.
+
+I'll structure the JSON response with classes, each having their name, attributes, methods, and superclass. Then, the associations will show the inheritance between the two classes. I need to avoid any redundant information, so only the necessary methods and attributes are included for each class.
+
+Let me double-check the code to ensure I didn't miss any methods or attributes. Worker has work, show_name, is_high_income. Developer has work and show_name. So in the UML, Worker will have all three methods, and Developer will have work and show_name, inheriting is_high_income from Worker.
+
+Yes, that looks correct. Now, I'll format this into the JSON structure as specified, making sure each class is properly defined with their details and the association is correctly noted.
+</think>
+
+```json
+{
+  "classes": [
+    {
+      "name": "Worker",
+      "attributes": [
+        {
+          "name": "full_name",
+          "type": "str"
+        },
+        {
+          "name": "income",
+          "type": "int"
+        }
+      ],
+      "methods": [
+        {
+          "name": "work",
+          "parameters": []
+        },
+        {
+          "name": "show_name",
+          "parameters": []
+        },
+        {
+          "name": "is_high_income",
+          "parameters": []
+        }
+      ],
+      "superclass": "ABC"
+    },
+    {
+      "name": "Developer",
+      "attributes": [
+        {
+          "name": "full_name",
+          "type": "str"
+        },
+        {
+          "name": "income",
+          "type": "int"
+        }
+      ],
+      "methods": [
+        {
+          "name": "work",
+          "parameters": []
+        },
+        {
+          "name": "show_name",
+          "parameters": []
+        }
+      ],
+      "superclass": "Worker"
+    }
+  ],
+  "associations": [
+    {
+      "class1": "Worker",
+      "class2": "Developer",
+      "type": "inheritance",
+      "direction": "general"
+    }
+  ]
+}
+```

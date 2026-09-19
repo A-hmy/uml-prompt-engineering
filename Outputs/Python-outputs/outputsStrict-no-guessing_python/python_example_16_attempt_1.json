@@ -1,0 +1,54 @@
+<think>
+Okay, so I need to generate a UML class diagram from the given Python code. Let me start by understanding what the code is doing.
+
+First, I see a class called CustomClass. It has an __init__ method, which means it's initializing some attributes. Let me look at the attributes inside __init__.
+
+There's self.count = 100. So count is an integer. Then self._threshold = 200, which is also an integer but with an underscore, indicating it's meant to be private. Next, self.__secret_key = "xyz" has double underscores, so that's a private attribute, and the type is a string. Then self._aa = 'A' is another private attribute, this time a string. Lastly, self.__bb = 10.5 is a private float.
+
+So, the class has these attributes: count, _threshold, __secret_key, _aa, and __bb. Their types are int, int, str, str, and float respectively.
+
+Now, I need to represent this in UML. Each attribute should be listed with its type. For private attributes, I'll prefix them with #. So in UML, it would look like:
+
+- count: int
+- _threshold: int
+- __secret_key: String
+- _aa: String
+- __bb: float
+
+I should make sure each is listed only once and correctly typed. Also, since there are no methods other than __init__ shown, I don't need to include any other methods unless they're defined elsewhere, which they aren't in this code.
+
+I should also check for any relationships, but since there are no other classes referenced, there are no inheritance, realization, or other relationships to include.
+
+So, putting it all together, the UML class diagram will have CustomClass with these five attributes, each with their respective types and visibility indicators.
+</think>
+
+{
+  "classes": [
+    {
+      "name": "CustomClass",
+      "attributes": [
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "_threshold",
+          "type": "int"
+        },
+        {
+          "name": "__secret_key",
+          "type": "String"
+        },
+        {
+          "name": "_aa",
+          "type": "String"
+        },
+        {
+          "name": "__bb",
+          "type": "float"
+        }
+      ]
+    }
+  ]
+}
+```

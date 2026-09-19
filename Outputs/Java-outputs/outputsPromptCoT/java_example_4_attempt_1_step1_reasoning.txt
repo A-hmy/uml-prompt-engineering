@@ -1,0 +1,33 @@
+To create the UML class diagram, we analyze the given Java code and identify the classes, their attributes, and their relationships.
+
+1. **Classes**:
+   - **User**: Contains the `userID` attribute.
+   - **Metrics**: Contains `metricOne`, `metricTwo`, and a composition to `User`.
+   - **DataPoints**: Extends `User` and contains `dataOne` and `dataTwo` attributes.
+
+2. **Inheritance**:
+   - `DataPoints` inherits from `User`.
+
+3. **Composition**:
+   - `Metrics` has a composition relationship with `User` through `userRecord`.
+
+4. **Attributes**:
+   - Each class's attributes are listed with their respective types.
+
+**UML Class Diagram**:
+
+- **User**
+  - `userID`: int
+
+- **Metrics**
+  - `metricOne`: float
+  - `metricTwo`: float
+  - `userRecord`: User (composition)
+
+- **DataPoints**
+  - `dataOne`: float
+  - `dataTwo`: float
+
+- **Inheritance**: `DataPoints` extends `User`.
+
+- **Composition**: `Metrics` composes `User` via `userRecord`.

@@ -1,0 +1,89 @@
+<think>
+Okay, so I need to create a UML class diagram based on the provided Python code. Let me go through the steps carefully.
+
+First, I'll look at the code. It defines a class called CustomClass. So, that's my main class in the diagram.
+
+Next, I need to list all the attributes. The code has several instance variables. Let's see:
+
+- count: int
+- _threshold: int
+- __secret_key: String
+- _aa: String
+- __bb: Float
+
+I remember that in UML, visibility is shown with stereotypes. So, private attributes (those starting with __) should be marked as #private. The others are public, so they don't need any stereotype.
+
+Now, looking for methods. The code has an __init__ method. That's important to include because it's a constructor.
+
+I should make sure each attribute is correctly typed. For example, count is an int, _threshold is an int, __secret_key is a String, _aa is a String, and __bb is a Float.
+
+In the UML, each attribute will have a type. So, I'll map each one accordingly.
+
+For the methods, the __init__ method is present, so I'll include that with parameters count, _threshold, and __secret_key.
+
+I don't see any inheritance, so the class won't have any parent classes. There are no interfaces mentioned, so no interface boxes.
+
+Are there any relationships? The code doesn't show any imports or dependencies, so I don't think there are any associations or compositions. It's just a single class with attributes and a method.
+
+I should make sure not to duplicate any elements. Each class, method, and attribute should appear only once.
+
+Putting it all together, the UML class diagram will have one class, CustomClass, with the listed attributes and the __init__ method. The private attributes will have the #private stereotype.
+
+I think that's all. I don't see any other elements in the code, so the diagram should be complete.
+</think>
+
+```json
+{
+  "classes": [
+    {
+      "name": "CustomClass",
+      "attributes": [
+        {
+          "name": "count",
+          "type": "int",
+          "visibility": "public"
+        },
+        {
+          "name": "_threshold",
+          "type": "int",
+          "visibility": "public"
+        },
+        {
+          "name": "__secret_key",
+          "type": "String",
+          "visibility": "private"
+        },
+        {
+          "name": "_aa",
+          "type": "String",
+          "visibility": "public"
+        },
+        {
+          "name": "__bb",
+          "type": "Float",
+          "visibility": "private"
+        }
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "parameters": [
+            {
+              "name": "count",
+              "type": "int"
+            },
+            {
+              "name": "_threshold",
+              "type": "int"
+            },
+            {
+              "name": "__secret_key",
+              "type": "String"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

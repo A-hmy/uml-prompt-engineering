@@ -1,0 +1,40 @@
+To create the UML class diagram based on the provided Java code, follow these steps:
+
+1. **Identify Classes and Interfaces**:
+   - **AbstractContract**: Abstract class.
+   - **Payment**: Concrete class extending AbstractContract.
+
+2. **Determine Inheritance**:
+   - `Payment` inherits from `AbstractContract`.
+
+3. **List Attributes**:
+   - `AbstractContract` has no attributes.
+   - `Payment` has:
+     - `senderID` (private, int)
+     - `receiverID` (private, int)
+
+4. **Identify Methods**:
+   - `AbstractContract` has:
+     - `validateTransaction(int, int)` (public, boolean)
+   - `Payment` has:
+     - `getSenderID()` (public, int)
+     - `getReceiverID()` (public, int)
+
+5. **Define Relationships**:
+   - Inheritance: `Payment` → `AbstractContract`.
+   - No other relationships (no dependencies, associations, compositions, or aggregations) are evident from the code.
+
+6. **Note Abstract Method**:
+   - `validateTransaction` in `AbstractContract` is abstract, so it's indicated in the diagram.
+
+**UML Class Diagram**:
+
+- **AbstractContract**
+  - `---` `validateTransaction(int, int) : boolean` (Abstract)
+  
+- **Payment**
+  - `+--` `senderID` : int
+  - `+--` `receiverID` : int
+  - `+--` `getSenderID() : int`
+  - `+--` `getReceiverID() : int`
+  - `*--` `validateTransaction(int, int) : boolean` (Inherited from AbstractContract)

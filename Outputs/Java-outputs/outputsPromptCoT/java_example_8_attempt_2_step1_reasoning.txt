@@ -1,0 +1,35 @@
+To create the UML class diagram, we identify the classes, their attributes, methods, and relationships present in the Java code.
+
+**UML Class Diagram Elements:**
+
+1. **Class Engine:**
+   - **Attributes:**
+     - `horsepower` of type `int` (default value: 430)
+   - **Methods:**
+     - No methods declared.
+
+2. **Class Car:**
+   - **Attributes:**
+     - `speed` of type `float` (default value: 3.4f)
+     - `fuelEfficiency` of type `float` (default value: 9.6f)
+   - **Methods:**
+     - `calculateFuelEfficiency(Engine engine)` returns `int`
+
+3. **Relationships:**
+   - **Dependency:** `Car` depends on `Engine` because the method `calculateFuelEfficiency` in `Car` takes an `Engine` object as a parameter.
+
+**UML Diagram:**
+
+```plaintext
+class Engine {
+    -horsepower: int = 430;
+}
+
+class Car {
+    -speed: float = 3.4f;
+    -fuelEfficiency: float = 9.6f;
+    calculateFuelEfficiency(Engine engine): int;
+}
+```
+
+- **Dependency:** `Car` → `Engine`

@@ -1,0 +1,31 @@
+To create the UML class diagram, we analyze the given Java code and identify the classes, their attributes, methods, and relationships.
+
+1. **Classes Identified**:
+   - **Engine**: Contains the `horsepower` attribute.
+   - **Car**: Contains `speed`, `fuelEfficiency`, and the `calculateFuel` method.
+   - **Main**: Contains the `main` method.
+
+2. **Attributes**:
+   - `Engine.horsepower` (int)
+   - `Car.speed` (float)
+   - `Car.fuelEfficiency` (float)
+
+3. **Methods**:
+   - `Car.calculateFuel(int distance)`: Returns an int.
+   - `Main.main(String[] args)`: Static method.
+
+4. **Relationships**:
+   - **Realization**: `Car` depends on `Engine` (diamond on `Engine` side).
+   - **Association**: `Main` is associated with `Car` (dotted line from `Main` to `Car`).
+
+**UML Class Diagram**:
+
+- **Engine** class with attribute `horsepower`.
+- **Car** class with attributes `speed` and `fuelEfficiency`, and method `calculateFuel`.
+- **Main** class with method `main`.
+
+**Connections**:
+- `Car` realizes `Engine`.
+- `Main` is associated with `Car`.
+
+This diagram accurately represents the structure and interactions in the provided Java code.

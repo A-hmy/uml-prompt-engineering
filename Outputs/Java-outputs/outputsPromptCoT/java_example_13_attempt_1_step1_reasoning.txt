@@ -1,0 +1,19 @@
+To create the UML class diagram, we analyze the Java code to identify classes, their attributes, methods, and relationships.
+
+1. **Identify Classes**:
+   - **Container**: A class with a private integer `containerData` and an inner class `Item`.
+   - **Item**: An inner class of `Container` with a private integer `itemData`.
+
+2. **Attributes**:
+   - `containerData` in `Container` (private, int).
+   - `itemData` in `Item` (private, int).
+
+3. **Methods**:
+   - Constructor for `Container` initializing `containerData`.
+   - Constructor for `Item` initializing `itemData`.
+   - `display()` method in `Item` printing both `containerData` and `itemData`.
+
+4. **Relationships**:
+   - **Composition**: `Container` has a `many` relationship with `Item` because multiple `Item` objects can exist within a `Container`, and the `Item` objects are not independent of the `Container`.
+
+The UML class diagram will reflect these elements, showing `Container` with an inner `Item` class, and the composition relationship between them.

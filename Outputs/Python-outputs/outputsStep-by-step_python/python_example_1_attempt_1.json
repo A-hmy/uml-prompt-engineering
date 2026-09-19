@@ -1,0 +1,122 @@
+<think>
+Okay, so I need to generate a UML class diagram from the given Python code. Let me go through the steps one by one.
+
+First, I'll identify all the classes and interfaces. Looking at the code, I see Device, Laptop, and Smartphone. None of these are interfaces, so they're all classes.
+
+Next, I'll look at each class's attributes. For Device, there's brand, which is a string. Laptop has brand, ram, and storage. Brand is inherited from Device, so I'll note that. Smartphone has brand and battery_capacity. Both are strings too.
+
+Now, the methods. Device has an __init__ method that takes brand. Laptop's __init__ calls super with brand, then adds ram and storage. It also has specs(), which returns a string. Smartphone's __init__ takes brand and battery_capacity, and its battery_life() method returns a string with battery info.
+
+I should check for any explicit constructors. Both Laptop and Smartphone have __init__ methods defined, so those are included.
+
+Inheritance: Laptop inherits from Device, and Smartphone also inherits from Device. So, Laptop → Device and Smartphone → Device.
+
+Realization relationships: Since Device isn't an interface, there are no realization relationships here.
+
+Associations: Looking at the attributes, each class has fields that reference other classes. For example, Device has no direct associations beyond inheritance. Laptop has ram and storage, but these are just attributes, not associations. Similarly, Smartphone's battery_capacity is an attribute.
+
+I don't see any explicit aggregation, composition, or dependency relationships in the code. The attributes are just data, so I won't include any associations unless specified.
+
+Finally, I'll make sure to include only what's explicitly in the code and remove any duplicates. So, the classes are Device, Laptop, and Smartphone. Attributes are as listed, and methods too. No interfaces or other relationships beyond inheritance.
+</think>
+
+{
+  "classes": [
+    {
+      "name": "Device",
+      "attributes": [
+        {
+          "name": "brand",
+          "type": "str",
+          "visibility": "public"
+        }
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "parameters": [
+            "brand"
+          ],
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "name": "Laptop",
+      "parent": "Device",
+      "attributes": [
+        {
+          "name": "brand",
+          "type": "str",
+          "visibility": "public"
+        },
+        {
+          "name": "ram",
+          "type": "int",
+          "visibility": "public"
+        },
+        {
+          "name": "storage",
+          "type": "int",
+          "visibility": "public"
+        }
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "parameters": [
+            "brand",
+            "ram",
+            "storage"
+          ],
+          "visibility": "public"
+        },
+        {
+          "name": "specs",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "name": "Smartphone",
+      "parent": "Device",
+      "attributes": [
+        {
+          "name": "brand",
+          "type": "str",
+          "visibility": "public"
+        },
+        {
+          "name": "battery_capacity",
+          "type": "int",
+          "visibility": "public"
+        }
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "parameters": [
+            "brand",
+            "battery_capacity"
+          ],
+          "visibility": "public"
+        },
+        {
+          "name": "battery_life",
+          "visibility": "public"
+        }
+      ]
+    }
+  ],
+  "associations": [],
+  "inheritance": [
+    {
+      "from": "Laptop",
+      "to": "Device"
+    },
+    {
+      "from": "Smartphone",
+      "to": "Device"
+    }
+  ]
+}

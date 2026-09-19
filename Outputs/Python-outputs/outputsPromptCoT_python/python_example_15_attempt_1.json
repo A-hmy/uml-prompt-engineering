@@ -1,0 +1,74 @@
+<think>
+Okay, so I need to create a UML class diagram based on the given Python code. Let me start by understanding what the code does. 
+
+First, I see a class called Product. It has an attribute quantity which is an integer. There's also a method called get_quantity(), which probably returns the quantity. So, in the UML, I'll need to represent this class with its attribute and method.
+
+Next, there's a Factory class. This class has a method called build_product(), which returns a Product instance. So, the Factory is creating an instance of Product. That makes me think there's a realization relationship between Factory and Product because Factory implements the Product interface by creating it.
+
+Now, looking at the relationships, the Factory class realizes the Product interface. So in UML, I'll need to show that the Factory class implements the Product interface. Also, the build_product() method in Factory is creating a Product, so there's an association between the Factory instance and the Product instance it creates.
+
+I should also consider any other relationships. Since the code doesn't show inheritance beyond the interface, I don't think there are any inheritance relationships besides the realization. There are no composite or aggregate relationships mentioned, so I'll focus on the realization and association.
+
+Putting it all together, I'll define the classes Product and Factory, the interface Product, and the relationship between Factory and Product. The attributes and methods should be listed as per the code. The association will be shown with an arrow from Factory to Product, indicating that Factory creates an instance of Product.
+
+I need to make sure I don't duplicate any elements and only include what's present in the code or reasoning. So, I'll structure the JSON accordingly, ensuring each class and interface is defined once, with their attributes and methods, and the necessary relationships are included without duplication.
+</think>
+
+```json
+{
+  "classes": [
+    {
+      "name": "Product",
+      "attributes": [
+        {
+          "name": "quantity",
+          "type": "int"
+        }
+      ],
+      "methods": [
+        {
+          "name": "get_quantity",
+          "return_type": "int"
+        }
+      ]
+    },
+    {
+      "name": "Factory",
+      "methods": [
+        {
+          "name": "build_product",
+          "return_type": "Product"
+        }
+      ]
+    }
+  ],
+  "interfaces": [
+    {
+      "name": "Product",
+      "methods": [
+        {
+          "name": "get_quantity",
+          "return_type": "int"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "realization": {
+        "from": "Factory",
+        "to": "Product",
+        "type": "realization"
+      }
+    },
+    {
+      "association": {
+        "from": "Factory",
+        "to": "Product",
+        "type": "association",
+        "description": "The factory instance is associated with the product instance it builds."
+      }
+    }
+  ]
+}
+```

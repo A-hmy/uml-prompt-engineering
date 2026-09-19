@@ -1,0 +1,53 @@
+<think>
+Okay, so I need to generate a UML class diagram from the given Python code. Let me start by reading the code carefully.
+
+First, there's the Item class. It has an __init__ method that takes 'data' and assigns it to self.data. So, in UML, I'll represent this with an attribute data of type str.
+
+Next, the Container class. Its __init__ takes 'content' and assigns it to self.content. So, content is another attribute, also of type str.
+
+The Container class also has a method_1 method. Inside this method, it creates an instance of Item with the string "New Item". So, method_1 is a method that returns nothing, as it's just creating an Item.
+
+Now, looking at the relationships. The Container class creates an Item inside method_1. That suggests that a Container can contain Items. So, there's a composition relationship between Container and Item.
+
+In UML, I'll have two classes: Container and Item. Container will have a method method_1, and both will have their attributes. The composition is shown with a diamond shape connecting Container to Item.
+
+I should make sure not to include any methods or attributes that aren't in the code. For example, there's no __str__ or __repr__ method, so I won't include those. Also, the relationships are only composition here, as the Container creates and holds an Item.
+
+So, putting it all together, the UML diagram will show Container with content and method_1, and Item with data. The composition link shows that Container can have multiple Items, but in this case, it's just one.
+</think>
+
+{
+  "classes": [
+    {
+      "name": "Container",
+      "attributes": [
+        {
+          "name": "content",
+          "type": "str"
+        }
+      ],
+      "methods": [
+        {
+          "name": "method_1",
+          "return_type": "void"
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "attributes": [
+        {
+          "name": "data",
+          "type": "str"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Container",
+      "target": "Item",
+      "type": "composition"
+    }
+  ]
+}

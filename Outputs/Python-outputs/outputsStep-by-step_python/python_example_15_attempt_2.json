@@ -1,0 +1,80 @@
+<think>
+Okay, so I need to generate a UML class diagram from the given Python code. Let me go through the steps one by one.
+
+First, I'll look at the code. There are two classes: Product and Factory. Product has an __init__ method that takes quantity and assigns it to self.quantity. It also has a get_quantity method that returns self.quantity. Factory has a build_product method that returns a Product instance with quantity 13. Then, a factory object is created, and product is assigned the result of factory.build_product(). Finally, product.get_quantity() is printed.
+
+Step 1: Identify classes and interfaces. Both Product and Factory are classes. I don't see any interfaces here.
+
+Step 2: Extract attributes. For Product, quantity is an integer. For Factory, I don't see any attributes listed, so it has none.
+
+Step 3: Extract methods. Product has __init__ and get_quantity. Factory has build_product. All methods are public since there's no modifier.
+
+Step 4: Identify constructors. Product has an explicit __init__ method, so that's noted.
+
+Step 5: Inheritance. There's no class definition that inherits from another, so no inheritance relationships.
+
+Step 6: Realization. Similarly, no realization relationships since there are no interfaces being implemented.
+
+Step 7: Associations. Looking at the code, Product is created by Factory. In the build_product method, a Product is returned with quantity 13. So, Factory has a method that creates a Product. So, the association is from Factory to Product. Since the method is called build_product, it's a factory method. The multiplicity is 1 because each call returns one Product.
+
+Step 8: Multiplicities. Since the code doesn't specify, I don't add any.
+
+Step 9: Remove non-existent elements. All classes and methods are present in the code.
+
+Step 10: Remove duplicates. No duplicates here.
+
+So, the UML diagram will have two classes: Product and Factory. Product has an attribute quantity and two methods. Factory has one method that returns a Product. The relationship is from Factory to Product via build_product.
+</think>
+
+```json
+{
+  "classes": [
+    {
+      "name": "Product",
+      "attributes": [
+        {
+          "name": "quantity",
+          "type": "int",
+          "visibility": "public"
+        }
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "parameters": [
+            {
+              "name": "quantity",
+              "type": "int",
+              "visibility": "public"
+            }
+          ]
+        },
+        {
+          "name": "get_quantity",
+          "return_type": "int",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "name": "Factory",
+      "methods": [
+        {
+          "name": "build_product",
+          "return_type": "Product",
+          "visibility": "public"
+        }
+      ]
+    }
+  ],
+  "associations": [
+    {
+      "source": "Factory",
+      "target": "Product",
+      "name": "build_product",
+      "multiplicity": "1",
+      "direction": "Factory → Product"
+    }
+  ]
+}
+```

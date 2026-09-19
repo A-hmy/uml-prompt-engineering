@@ -1,0 +1,41 @@
+To create the UML class diagram, we'll identify the classes, their attributes, methods, and relationships based on the provided Python code.
+
+1. **Identify Classes and Their Inheritance:**
+   - **Device** is the base class.
+   - **Laptop** and **Smartphone** inherit from **Device**.
+
+2. **List Attributes:**
+   - **Device**: brand
+   - **Laptop**: ram, storage
+   - **Smartphone**: battery_capacity
+
+3. **List Methods:**
+   - **Device**: __init__, get_brand
+   - **Laptop**: __init__, specs
+   - **Smartphone**: __init__, battery_life
+
+4. **Define Relationships:**
+   - Inheritance: Laptop → Device, Smartphone → Device
+
+5. **Ensure No Duplicates or Invented Elements:**
+   - All classes, methods, and attributes are directly from the code.
+
+**Final UML Class Diagram:**
+
+- **Class Device**
+  - **Attribute:** brand (String)
+  - **Method:** get_brand() → String
+
+- **Class Laptop** (inherits from Device)
+  - **Attribute:** ram (Integer), storage (Integer)
+  - **Method:** specs() → String
+
+- **Class Smartphone** (inherits from Device)
+  - **Attribute:** battery_capacity (Integer)
+  - **Method:** battery_life() → String
+
+**Inheritance Relationships:**
+- Laptop depends on Device
+- Smartphone depends on Device
+
+This diagram accurately represents the structure and relationships in the provided Python code.

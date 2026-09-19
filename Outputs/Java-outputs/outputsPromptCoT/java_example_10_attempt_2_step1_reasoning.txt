@@ -1,0 +1,31 @@
+To create the UML class diagram based on the provided Java code, follow these steps:
+
+1. **Identify Classes and Interfaces**: 
+   - `PowerUnit` and `Vehicle` are the two classes present in the code.
+
+2. **List Attributes**:
+   - `PowerUnit` has an attribute `power` of type `int`.
+   - `Vehicle` has attributes `speed` and `fuelEfficiency`, both of type `float`.
+
+3. **Identify Methods**:
+   - `Vehicle` has a method `calculatePower(int distance)` that returns an instance of `PowerUnit`.
+
+4. **Determine Relationships**:
+   - **Realization**: `Vehicle` uses `PowerUnit` through the `calculatePower` method, indicating a realization relationship.
+
+5. **Construct the UML Diagram**:
+   - Draw two rectangles representing `PowerUnit` and `Vehicle`.
+   - Add attributes inside each rectangle.
+   - Connect `Vehicle` to `PowerUnit` with a realization arrow indicating the method returns a `PowerUnit` instance.
+
+**Final UML Class Diagram**:
+
+- **Class PowerUnit**
+  - Attribute: power (int)
+  
+- **Class Vehicle**
+  - Attributes: speed (float), fuelEfficiency (float)
+  - Method: calculatePower(int distance) -> PowerUnit
+
+**Relationship**:
+- `Vehicle` realizes `PowerUnit` via the `calculatePower` method.

@@ -1,0 +1,74 @@
+<think>
+Okay, so I need to generate a UML class diagram from the given Java code. Let me go through the steps one by one.
+
+First, I'll look at the code. There are two classes: PowerUnit and Vehicle. Both are classes, not interfaces, so I'll note their visibility as public since they're explicitly defined without any modifiers.
+
+For attributes, PowerUnit has an int power = 430. Since it's explicitly declared, I'll include it. Vehicle has two floats: speed and fuelEfficiency, both with default values. So I'll add those too.
+
+Next, methods. PowerUnit has no methods, so nothing there. Vehicle has a public method calculatePower that returns a PowerUnit. I'll add that method with its parameter.
+
+Constructors: Neither class has an explicit constructor, so I won't include any.
+
+Inheritance: I don't see any extends keyword, so no parent classes.
+
+Realization: Similarly, no implements keyword, so no interfaces.
+
+Associations: Looking at the fields, Vehicle has a field of type PowerUnit. So there's an association from Vehicle to PowerUnit. Since it's a direct reference, it's a simple association, not aggregation or composition. No methods like setPowerUnit() are present, so it's a unidirectional, multiplicity of one.
+
+I don't see any static, abstract, or default modifiers explicitly written, so I won't include those.
+
+Putting it all together, I'll structure the UML with classes, their attributes, methods, and the association between them.
+</think>
+
+{
+  "classes": [
+    {
+      "name": "PowerUnit",
+      "type": "Class",
+      "attributes": [
+        {
+          "name": "power",
+          "type": "int",
+          "visibility": "public"
+        }
+      ],
+      "methods": []
+    },
+    {
+      "name": "Vehicle",
+      "type": "Class",
+      "attributes": [
+        {
+          "name": "speed",
+          "type": "float",
+          "visibility": "public"
+        },
+        {
+          "name": "fuelEfficiency",
+          "type": "float",
+          "visibility": "public"
+        }
+      ],
+      "methods": [
+        {
+          "name": "calculatePower",
+          "parameters": [
+            {
+              "name": "distance",
+              "type": "int"
+            }
+          ],
+          "visibility": "public"
+        }
+      ]
+    }
+  ],
+  "associations": [
+    {
+      "source": "Vehicle",
+      "target": "PowerUnit",
+      "multiplicity": "1",
+      "direction": "Vehicle → PowerUnit"
+    }
+  ]
+}

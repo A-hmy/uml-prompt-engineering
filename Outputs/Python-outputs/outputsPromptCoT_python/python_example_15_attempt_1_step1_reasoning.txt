@@ -1,0 +1,11 @@
+To create the UML class diagram, we analyze the code to identify classes, their attributes, methods, and relationships.
+
+1. **Classes**:
+   - `Product`: Contains `quantity` (int) and `get_quantity()` method.
+   - `Factory`: Contains `build_product()` method which returns a `Product`.
+
+2. **Relationships**:
+   - **Realization**: `Factory` class realizes `Product` interface by creating instances of `Product`.
+   - **Association**: The `factory` instance (of `Factory`) is associated with the `product` instance (of `Product`), facilitated by the `build_product()` method.
+
+The UML diagram includes these elements and their relationships, focusing on class-level structures and instance associations.

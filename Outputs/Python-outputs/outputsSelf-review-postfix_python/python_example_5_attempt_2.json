@@ -1,0 +1,88 @@
+<think>
+Okay, I need to generate a UML class diagram from the given Python code. Let me start by understanding what each part of the code does.
+
+First, I see that the code imports ABC and abstractmethod from the abc module. This means that the Worker class is an abstract base class. So, in UML, I should represent Worker as an abstract class with an abstract method.
+
+Looking at the Worker class, it has an __init__ method that takes full_name and income, and assigns them to instance variables. So, in the UML, Worker will have these attributes. The work method is abstract, so it should be marked as abstract in the diagram. There's also a show_name method that returns a string, and is_high_income which checks if income is over 3000.
+
+Next, the Developer class inherits from Worker. Since it's a subclass, I'll note the inheritance relationship. The work method in Developer overrides the abstract method from Worker, returning a specific string. So, in the UML, Developer will have this overridden method.
+
+The instance dev is created with full_name "John" and income 3500. This instance will have all the attributes of Worker and the specific methods of Developer.
+
+Now, I need to map these classes and their relationships. Worker is an abstract class, so it's an abstract class in UML. Developer extends Worker, so there's an inheritance arrow from Worker to Developer.
+
+Looking at the attributes, Worker has full_name and income. Developer doesn't add any new attributes, so in the UML, it only shows the attributes inherited from Worker.
+
+For methods, Worker has work (abstract), show_name, and is_high_income. Developer overrides work, so in the UML, work in Developer is an override. show_name and is_high_income are inherited, so they're included in Worker.
+
+I should also consider any dependencies or associations. The code doesn't show any, so I don't need to include those.
+
+I need to make sure each class and method is only defined once, and all relationships are correctly represented. No extra elements should be added that aren't in the code.
+
+So, the final UML will have two classes: Worker and Developer. Worker is abstract with the abstract method work. Developer inherits from Worker and overrides work. Attributes are full_name and income in Worker. Methods include show_name and is_high_income in Worker, and the overridden work in Developer.
+
+I think that covers everything. Now, I'll structure this into a JSON object as per the requirements.
+</think>
+
+```json
+{
+  "classes": [
+    {
+      "name": "Worker",
+      "attributes": [
+        {
+          "name": "full_name",
+          "type": "str"
+        },
+        {
+          "name": "income",
+          "type": "int"
+        }
+      ],
+      "methods": [
+        {
+          "name": "work",
+          "visibility": "public",
+          "abstract": true
+        },
+        {
+          "name": "show_name",
+          "visibility": "public",
+          "return_type": "str"
+        },
+        {
+          "name": "is_high_income",
+          "visibility": "public",
+          "return_type": "bool"
+        }
+      ],
+      "interactions": [
+        {
+          "type": "inheritance",
+          "from": "Worker",
+          "to": "Developer"
+        }
+      ]
+    },
+    {
+      "name": "Developer",
+      "attributes": [],
+      "methods": [
+        {
+          "name": "work",
+          "visibility": "public",
+          "override": true,
+          "return_type": "str"
+        }
+      ],
+      "interactions": [
+        {
+          "type": "inheritance",
+          "from": "Worker",
+          "to": "Developer"
+        }
+      ]
+    }
+  ]
+}
+```

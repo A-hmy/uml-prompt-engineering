@@ -1,0 +1,83 @@
+<think>
+Okay, so I need to create a UML class diagram based on the provided Python code. Let me go through the code step by step to understand what each part represents.
+
+First, I see two classes: Worker and Developer. Worker is an abstract class, which I know in Python means it can't be instantiated on its own. Developer extends Worker, so it's a concrete class that inherits from Worker.
+
+Looking at the attributes, Worker has full_name and income. These are instance variables, so in UML, they'll be attributes of the Worker class. Developer doesn't have any additional attributes, so it doesn't add anything else.
+
+Next, the methods. Worker has __init__, which is the constructor. It takes full_name and income as parameters. Then there's show_name(), which returns the full_name. is_high_income() checks if the income is more than 1000, returning a boolean. The work() method is abstract in Worker, so it's declared with a semicolon, indicating it's meant to be implemented by subclasses. Since Developer extends Worker, it must implement work(). In the code, Developer's work() method returns a string, probably something like "I'm working as a developer."
+
+Now, for the relationships. The main one is inheritance, where Developer inherits from Worker. I don't see any other relationships like composition or associations because there are no other classes or objects being connected.
+
+I should make sure not to include any methods or attributes that aren't in the code. Also, since Worker is abstract, I should note that in the UML, perhaps with a note or an abstract method indicator. But the requirements say not to invent any elements, so I'll stick to what's there.
+
+Putting it all together, the UML should show two classes with their attributes and methods, with the inheritance line connecting them. I'll structure it with the base class first, then the derived class. Each method and attribute will be listed with their types.
+
+I think that's all. I'll make sure the JSON is correctly formatted with each class, their attributes, methods, and the inheritance relationship.
+</think>
+
+```json
+{
+  "classes": [
+    {
+      "name": "Worker",
+      "attributes": [
+        {
+          "name": "full_name",
+          "type": "String"
+        },
+        {
+          "name": "income",
+          "type": "Integer"
+        }
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "parameters": [
+            {
+              "name": "full_name",
+              "type": "String"
+            },
+            {
+              "name": "income",
+              "type": "Integer"
+            }
+          ]
+        },
+        {
+          "name": "show_name",
+          "return_type": "String"
+        },
+        {
+          "name": "is_high_income",
+          "return_type": "Boolean"
+        },
+        {
+          "name": "work",
+          "return_type": "String",
+          "is_abstract": true
+        }
+      ]
+    },
+    {
+      "name": "Developer",
+      "parent": "Worker",
+      "attributes": [],
+      "methods": [
+        {
+          "name": "work",
+          "return_type": "String"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "type": "Inheritance",
+      "source": "Worker",
+      "target": "Developer"
+    }
+  ]
+}
+```

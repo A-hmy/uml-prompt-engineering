@@ -1,0 +1,33 @@
+To create the UML class diagram, we analyze the inheritance hierarchy and attributes of each class.
+
+1. **MedicalData Class**:
+   - **Attributes**: patientID (int)
+   - **Subclasses**: VitalSigns, LabResults, MedicalHistory, PatientRecord
+
+2. **VitalSigns Class**:
+   - **Attributes**: heartRate (float), bloodPressure (float)
+   - **Inherits**: patientID from MedicalData
+
+3. **LabResults Class**:
+   - **Attributes**: glucoseLevel (float), cholesterol (float)
+   - **Inherits**: patientID from MedicalData
+
+4. **DetailedLabResults Class**:
+   - **Attributes**: hemoglobin (float), platelets (float)
+   - **Inherits**: glucoseLevel, cholesterol, patientID from LabResults
+
+5. **MedicalHistory Class**:
+   - **Attributes**: previousConditions (float)
+   - **Inherits**: patientID from MedicalData
+
+6. **PatientRecord Class**:
+   - **Attributes**: recordNumber (int)
+   - **Inherits**: previousConditions, patientID from MedicalHistory
+
+**UML Class Diagram**:
+
+- **MedicalData** is the base class with `patientID`.
+- **VitalSigns**, **LabResults**, **MedicalHistory**, and **PatientRecord** extend **MedicalData**.
+- **DetailedLabResults** extends **LabResults**.
+
+Each subclass lists its specific attributes, inheriting `patientID` from **MedicalData**. No methods or associations are shown as they aren't present in the code.

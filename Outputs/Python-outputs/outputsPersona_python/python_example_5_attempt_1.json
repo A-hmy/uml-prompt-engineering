@@ -1,0 +1,109 @@
+<think>
+Okay, so I need to create a UML class diagram from the given Python code. Let me start by understanding what the code does and what elements are present.
+
+First, I see that the code imports ABC and abstractmethod from the abc module. That probably means there's an abstract base class involved.
+
+Looking at the classes, there's Worker which inherits from ABC. So Worker is an abstract class. It has an __init__ method that takes full_name and income, and assigns them to instance variables. It also has a few methods: work(), show_name(), and is_high_income(). The work() method is abstract because it has @abstractmethod, so all subclasses must implement it.
+
+Then there's Developer, which inherits from Worker. Developer has its own implementation of the work() method, which returns a string with the developer's full name and the action of coding. So Developer is a concrete subclass of Worker.
+
+Next, there's an instance of Developer called dev, initialized with "John" and 3500. Then some methods are called on dev: show_name(), work(), and is_high_income().
+
+Now, I need to translate this into a UML class diagram. Let's break it down step by step.
+
+1. **Identify Classes and Interfaces:**
+   - Worker is a class, and since it's an abstract class, it should be an abstract class in UML.
+   - Developer is a concrete class that inherits from Worker, so it's a concrete class with inheritance from Worker.
+   - The abstractmethod and ABC are part of Python's inheritance, but in UML, we don't need to represent those; we just note that Worker is abstract.
+
+2. **Attributes:**
+   - Worker has full_name and income as attributes. Both are of type str and float, respectively.
+   - Developer doesn't add any new attributes beyond what Worker has.
+
+3. **Methods:**
+   - Worker has work(), show_name(), and is_high_income(). Since work() is abstract, it's marked as abstract in UML.
+   - Developer overrides work() with its own implementation, so in UML, the method is implemented in Developer.
+
+4. **Relationships:**
+   - Developer inherits from Worker, so there's an inheritance relationship between Developer and Worker.
+   - The instance dev is an instance of Developer, but in UML, instances aren't shown in the class diagram; only classes and their relationships are.
+
+5. **Dependencies and Associations:**
+   - I don't see any dependencies or associations beyond inheritance. The code doesn't show any imports or external modules that the classes depend on, so I don't need to include those.
+
+6. **Aggregation:**
+   - There's no aggregation here since the classes don't contain other objects as parts.
+
+Putting it all together, the UML diagram will have two classes: Worker and Developer. Worker is abstract with the abstract method work(). Developer inherits from Worker and implements work(). Both have the same attributes. There's an inheritance relationship between Developer and Worker.
+
+I need to make sure not to include any methods or attributes that aren't in the code and to accurately represent the inheritance. Also, since the code doesn't show any realizations or dependencies beyond inheritance, those aren't included.
+
+So the final UML should have two classes with their attributes and methods, with the inheritance relationship clearly shown.
+</think>
+
+```json
+{
+  "classes": [
+    {
+      "name": "Worker",
+      "attributes": [
+        {
+          "name": "full_name",
+          "type": "str"
+        },
+        {
+          "name": "income",
+          "type": "float"
+        }
+      ],
+      "methods": [
+        {
+          "name": "work",
+          "is_abstract": true
+        },
+        {
+          "name": "show_name",
+          "return_type": "str"
+        },
+        {
+          "name": "is_high_income",
+          "return_type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "Developer",
+      "attributes": [
+        {
+          "name": "full_name",
+          "type": "str"
+        },
+        {
+          "name": "income",
+          "type": "float"
+        }
+      ],
+      "methods": [
+        {
+          "name": "work",
+          "return_type": "str"
+        },
+        {
+          "name": "show_name",
+          "return_type": "str"
+        },
+        {
+          "name": "is_high_income",
+          "return_type": "bool"
+        }
+      ],
+      "inheritance": [
+        {
+          "from": "Worker",
+          "to": "Developer"
+        }
+      ]
+    }
+  ]
+}
+```

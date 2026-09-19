@@ -1,0 +1,64 @@
+<think>
+Okay, so I need to create a UML class diagram from the given Python code. Let me start by understanding what each part of the code does.
+
+First, there's the Compensation class. It has an __init__ method that takes monthly_income and assigns it to an instance variable. There's also an annual_income method that returns monthly_income multiplied by 12. So, the Compensation class has an attribute monthly_income of type int and a method annual_income() that returns an int.
+
+Next, there's the Worker class. Its __init__ method takes full_name and compensation, assigning them to instance variables. The total_income method calls self.compensation.annual_income(), so it returns an int as well. The Worker class has attributes full_name (string) and compensation (of type Compensation), and the method total_income().
+
+Looking at the usage, compensation is an instance of Compensation created with 2000, and worker is a Worker instance with 'Ali' as full_name and the compensation object. So, the relationship between Worker and Compensation is composition because the Worker has a Compensation object as an attribute, and the life of the Compensation instance is tied to the Worker.
+
+I should include all classes, their attributes with types, and methods. Also, the realization relationship since Worker uses Compensation. The attributes are straightforward, and the methods are included as they are.
+
+I need to make sure not to duplicate anything and only include what's explicitly in the code. So, the UML will have two classes: Compensation and Worker. Compensation has a method annual_income(), and Worker has total_income(). The Compensation instance is created and assigned to the Worker, indicating composition.
+
+I think that's all. Now, I'll structure this into a JSON object as per the requirements.
+</think>
+
+```json
+{
+  "classes": [
+    {
+      "name": "Compensation",
+      "attributes": [
+        {
+          "name": "monthly_income",
+          "type": "int"
+        }
+      ],
+      "methods": [
+        {
+          "name": "annual_income",
+          "return_type": "int"
+        }
+      ]
+    },
+    {
+      "name": "Worker",
+      "attributes": [
+        {
+          "name": "full_name",
+          "type": "str"
+        },
+        {
+          "name": "compensation",
+          "type": "Compensation"
+        }
+      ],
+      "methods": [
+        {
+          "name": "total_income",
+          "return_type": "int"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "name": "compensation",
+      "from": "Worker",
+      "to": "Compensation",
+      "type": "composition"
+    }
+  ]
+}
+```

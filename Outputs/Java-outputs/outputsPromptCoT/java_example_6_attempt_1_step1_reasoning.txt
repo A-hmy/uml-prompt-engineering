@@ -1,0 +1,51 @@
+To create a UML class diagram based on the provided Java code, we'll analyze each class, its attributes, and its relationships.
+
+### Step-by-Step Analysis:
+
+1. **Identify Classes:**
+   - **Engine**: A class with a single attribute `horsepower` of type `int`.
+   - **Car**: A class with attributes `speed` and `fuelEfficiency` of type `float`, and a composition relationship with `Engine`.
+   - **Driver**: A class with attributes `experience` and `rating` of type `float`, and an association with `Car`.
+
+2. **Attributes:**
+   - **Engine**:
+     - `horsepower: int`
+   - **Car**:
+     - `speed: float`
+     - `fuelEfficiency: float`
+     - `engine: Engine` (composition)
+   - **Driver**:
+     - `experience: float`
+     - `rating: float`
+     - `car: Car` (association)
+
+3. **Relationships:**
+   - **Composition**: `Engine` is composed by `Car`.
+   - **Association**: `Driver` is associated with `Car`.
+
+### Final UML Class Diagram:
+
+```mermaid
+classDiagram
+
+    class Engine {
+        +int horsepower;
+    }
+
+    class Car {
+        +float speed;
+        +float fuelEfficiency;
+        +Engine engine;
+    }
+
+    class Driver {
+        +float experience;
+        +float rating;
+        +Car car;
+    }
+
+    Car --> Engine (composition)
+    Driver --> Car (association)
+```
+
+This UML class diagram accurately represents the structure and relationships described in the Java code.

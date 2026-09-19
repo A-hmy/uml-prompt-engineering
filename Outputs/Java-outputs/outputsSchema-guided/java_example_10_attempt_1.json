@@ -1,0 +1,91 @@
+<think>
+Okay, so I need to generate a UML class diagram from the given Java code. Let me start by understanding what the code has.
+
+First, I see two classes: PowerUnit and Vehicle. Both are defined with default visibility, which in Java means they're public. So in UML, I'll represent them as public classes.
+
+Looking at PowerUnit, it has an integer attribute called power initialized to 430. So in the UML, I'll include this attribute with its type and initial value.
+
+Next, the Vehicle class has two float attributes: speed and fuelEfficiency, both with initial values. These should be included as instance variables in the UML.
+
+Vehicle also has a method called calculatePower that takes an int distance and returns a PowerUnit. So I'll add this method to the methods section of the Vehicle class in UML.
+
+Now, checking for relationships. The calculatePower method in Vehicle returns a PowerUnit, which suggests a realization relationship between Vehicle and PowerUnit. So in the relationships section, I'll note that Vehicle realizes PowerUnit.
+
+I don't see any inheritance here, so no parent classes. There are no interfaces mentioned, so no interface classes in UML. Also, there are no composite or aggregate relationships, just the realization.
+
+I need to make sure not to include any unnecessary elements. No static variables or methods are present, so those can be left out. Also, no dependencies or associations beyond what's in the code.
+
+Putting it all together, I'll structure the JSON with the two classes, their attributes, methods, and the realization relationship. I'll ensure each part is correctly mapped with visibility, types, and multiplicities as per the code.
+</think>
+
+```json
+{
+  "classes": [
+    {
+      "classOrInterface": "Class",
+      "name": "PowerUnit",
+      "visibility": "public",
+      "isStatic": false,
+      "isAbstract": false,
+      "constructors": [],
+      "variables": [
+        {
+          "name": "power",
+          "type": "int",
+          "visibility": "public",
+          "isStatic": false
+        }
+      ],
+      "methods": []
+    },
+    {
+      "classOrInterface": "Class",
+      "name": "Vehicle",
+      "visibility": "public",
+      "isStatic": false,
+      "isAbstract": false,
+      "constructors": [],
+      "variables": [
+        {
+          "name": "speed",
+          "type": "float",
+          "visibility": "public",
+          "isStatic": false
+        },
+        {
+          "name": "fuelEfficiency",
+          "type": "float",
+          "visibility": "public",
+          "isStatic": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "calculatePower",
+          "visibility": "public",
+          "isStatic": false,
+          "isAbstract": false,
+          "returnType": "PowerUnit",
+          "parameters": [
+            {
+              "name": "distance",
+              "type": "int"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationship": "Realization",
+      "source": "Vehicle",
+      "target": "PowerUnit",
+      "multiplicity1": "1",
+      "role1": "calculates power",
+      "multiplicity2": "1",
+      "role2": "power unit"
+    }
+  ]
+}
+```

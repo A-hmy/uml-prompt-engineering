@@ -1,0 +1,19 @@
+To create the UML class diagram for the provided Python code, follow these steps:
+
+1. **Identify the Class**: The code defines a single class `CustomClass`.
+
+2. **List Attributes**: Include all instance variables with their types and visibility.
+
+   - `count: int`
+   - `_threshold: int`
+   - `__secret_key: String`
+   - `_aa: String`
+   - `__bb: Float`
+
+3. **Include Methods**: Add the `__init__` method as it's present in the code.
+
+4. **Define Visibility**: Use stereotypes to indicate private attributes (`__`).
+
+5. **Draw the Diagram**: Represent `CustomClass` with its attributes and method, noting the visibility of attributes.
+
+The final UML class diagram will depict `CustomClass` with the listed attributes and method, accurately reflecting the code structure.

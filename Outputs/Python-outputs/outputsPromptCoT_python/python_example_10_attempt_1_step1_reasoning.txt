@@ -1,0 +1,30 @@
+To create the UML class diagram, we analyze the given Python code to identify classes, their attributes, methods, and relationships.
+
+1. **Classes Identified**:
+   - **Compensation**: Manages monthly income and calculates annual income.
+   - **Worker**: Manages full name and has a compensation attribute, calculating total income.
+
+2. **Attributes**:
+   - **Compensation**: `monthly_income` (int).
+   - **Worker**: `full_name` (str), `compensation` (Compensation).
+
+3. **Methods**:
+   - **Compensation**: `annual_income()` returns int.
+   - **Worker**: `total_income()` returns int, which calls `annual_income()` of its `compensation` attribute.
+
+4. **Relationships**:
+   - **Composition**: Worker has a `compensation` attribute, indicating a composition relationship with the Compensation class.
+   - **Association and Realization**: Worker associates with and realizes the functionality of Compensation through method calls.
+
+**UML Class Diagram**:
+
+- **Class Compensation**:
+  - Attribute: `monthly_income` (int)
+  - Method: `annual_income()`
+
+- **Class Worker**:
+  - Attribute: `full_name` (str)
+  - Composition: `compensation` (Compensation)
+  - Method: `total_income()`
+
+**Note**: The realization relationship is implied by the method call from Worker to Compensation, though no explicit interface is defined in the code.

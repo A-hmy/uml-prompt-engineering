@@ -1,0 +1,64 @@
+<think>
+Okay, so I need to create a UML class diagram based on the given Python code. Let me start by understanding what the code does. 
+
+First, I see there's a `Product` class. It has an attribute `quantity` which is an integer, and a method `get_quantity()`. That method probably returns the quantity. So, in UML, I'll represent `Product` as a class with an attribute `quantity: int` and a method `get_quantity()`.
+
+Next, there's a `Factory` class. It has a method `build_product()`, which returns a `Product`. So, the `Factory` class is creating instances of `Product`. In UML, this means that `Factory` realizes the `Product` interface. So, I'll note that `Factory` realizes `Product`.
+
+Now, looking at the relationships. The `Factory` class uses `build_product()` to create a `Product` instance. So, there's an association between a `Factory` instance and a `Product` instance. The `build_product()` method is what connects them, so I'll include that as an association with a method.
+
+I don't see any inheritance relationships here. Both `Product` and `Factory` don't inherit from other classes. There's no composition or aggregation mentioned either. The `Factory` isn't composed of other classes, and `Product` doesn't contain other components.
+
+So, putting it all together, the UML diagram will have two classes: `Product` and `Factory`. `Factory` realizes the `Product` interface. There's an association between `Factory` and `Product` instances, facilitated by `build_product()`. 
+
+I need to make sure I include all attributes and methods, and only the existing elements without adding anything extra. So, the JSON should accurately reflect these relationships without any unnecessary details.
+</think>
+
+```json
+{
+  "classes": [
+    {
+      "name": "Product",
+      "attributes": [
+        {
+          "name": "quantity",
+          "type": "int"
+        }
+      ],
+      "methods": [
+        {
+          "name": "get_quantity",
+          "return_type": "int"
+        }
+      ]
+    },
+    {
+      "name": "Factory",
+      "methods": [
+        {
+          "name": "build_product",
+          "return_type": "Product"
+        }
+      ]
+    }
+  ],
+  "interfaces": [
+    {
+      "name": "Product",
+      "realization": [
+        {
+          "class": "Factory",
+          "method": "build_product"
+        }
+      ]
+    }
+  ],
+  "associations": [
+    {
+      "class1": "Factory",
+      "class2": "Product",
+      "method": "build_product"
+    }
+  ]
+}
+```

@@ -1,0 +1,111 @@
+<think>
+Okay, I need to generate a UML class diagram from the given Python code. Let me start by understanding what each part of the code does.
+
+First, I see that the code imports ABC and abstractmethod from the abc module. This tells me that Worker is an abstract base class because it inherits from ABC and has an abstract method work.
+
+Looking at the Worker class, it has an __init__ method that takes full_name and income, and assigns them to instance variables. So, in the UML, Worker will have these attributes with their types. The work method is abstract, so in the diagram, it should be marked as abstract. There's also a show_name method that returns a string, and is_high_income which checks if income is over 3000.
+
+Next, the Developer class inherits from Worker. Since it's a subclass, I'll need to show the inheritance relationship. The work method in Developer is overridden to return a specific string, so in the UML, Developer will have this method with the correct return type.
+
+There's an instance of Developer created with John and 3500. But for the UML, instances don't need to be included unless they're part of a relationship, which they aren't here, so I can ignore them.
+
+Now, I'll list all the classes: Worker and Developer. The attributes are full_name, income, and the methods each has. For relationships, Worker is abstract, so it's an abstract class. Developer inherits from Worker, so that's an inheritance relationship.
+
+I should also consider any dependencies or associations, but in this code, everything is within the same package, so no additional relationships are needed.
+
+I need to make sure not to include any methods or attributes that aren't in the code. Also, ensure that all details are correctly represented, like the abstract method in Worker and the overridden work method in Developer.
+
+Finally, I'll structure the JSON with classes, their attributes, methods, and relationships. Each class will have its attributes with types, methods with return types and parameters, and the inheritance link between Worker and Developer.
+</think>
+
+```json
+{
+  "classes": [
+    {
+      "name": "Worker",
+      "attributes": [
+        {
+          "name": "full_name",
+          "type": "str"
+        },
+        {
+          "name": "income",
+          "type": "int"
+        }
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "parameters": [
+            {
+              "name": "full_name",
+              "type": "str"
+            },
+            {
+              "name": "income",
+              "type": "int"
+            }
+          ]
+        },
+        {
+          "name": "show_name",
+          "return_type": "str"
+        },
+        {
+          "name": "is_high_income",
+          "return_type": "bool"
+        },
+        {
+          "name": "work",
+          "abstract": true
+        }
+      ]
+    },
+    {
+      "name": "Developer",
+      "attributes": [
+        {
+          "name": "full_name",
+          "type": "str"
+        },
+        {
+          "name": "income",
+          "type": "int"
+        }
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "parameters": [
+            {
+              "name": "full_name",
+              "type": "str"
+            },
+            {
+              "name": "income",
+              "type": "int"
+            }
+          ]
+        },
+        {
+          "name": "show_name",
+          "return_type": "str"
+        },
+        {
+          "name": "is_high_income",
+          "return_type": "bool"
+        },
+        {
+          "name": "work",
+          "return_type": "str"
+        }
+      ],
+      "inheritance": [
+        {
+          "from": "Worker"
+        }
+      ]
+    }
+  ]
+}
+```

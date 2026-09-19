@@ -1,0 +1,58 @@
+To create the UML class diagram, we'll analyze the given Java code and identify the classes, their attributes, methods, and relationships.
+
+### Step-by-Step Analysis:
+
+1. **Identify Classes:**
+   - **MedicalRecord**: A base class with an attribute `recordType`.
+   - **PatientRecord**: Extends `MedicalRecord` and adds an attribute `patientID`.
+   - **DoctorRecord**: Extends `PatientRecord` and adds an attribute `consultationFee` and a method `processRecord()`.
+   - **TreatmentRecord**: Extends `PatientRecord` and adds an attribute `treatmentCode`.
+
+2. **Identify Attributes:**
+   - **MedicalRecord**:
+     - `recordType` (String)
+   - **PatientRecord**:
+     - `patientID` (int)
+   - **DoctorRecord**:
+     - `consultationFee` (float)
+   - **TreatmentRecord**:
+     - `treatmentCode` (int)
+
+3. **Identify Methods:**
+   - **DoctorRecord**:
+     - `processRecord()`: Prints a message combining `recordType`, `patientID`, and a processing message.
+
+4. **Identify Relationships:**
+   - **Inheritance**: 
+     - `DoctorRecord` inherits from `PatientRecord`, which in turn inherits from `MedicalRecord`.
+     - `TreatmentRecord` inherits from `PatientRecord`.
+
+### UML Class Diagram:
+
+```plaintext
+class MedicalRecord {
+    +String recordType;
+}
+
+class PatientRecord extends MedicalRecord {
+    +int patientID;
+}
+
+class DoctorRecord extends PatientRecord {
+    +float consultationFee;
+    +void processRecord();
+}
+
+class TreatmentRecord extends PatientRecord {
+    +int treatmentCode;
+}
+```
+
+### Explanation:
+
+- **MedicalRecord**: This is the base class with the `recordType` attribute.
+- **PatientRecord**: Extends `MedicalRecord` and adds the `patientID` attribute.
+- **DoctorRecord**: Extends `PatientRecord`, adds `consultationFee`, and implements the `processRecord()` method.
+- **TreatmentRecord**: Extends `PatientRecord` and adds the `treatmentCode` attribute.
+
+The UML diagram shows the inheritance hierarchy with `DoctorRecord` and `TreatmentRecord` both extending `PatientRecord`, which in turn extends `MedicalRecord`.

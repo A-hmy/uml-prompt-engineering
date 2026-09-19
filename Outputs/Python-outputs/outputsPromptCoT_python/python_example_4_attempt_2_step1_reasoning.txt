@@ -1,0 +1,11 @@
+To create the UML class diagram for the given Python code, we identify the `Operations` class with its methods and an instance of it.
+
+1. **Class Definition**: Define the `Operations` class with three methods.
+2. **Methods**:
+   - `add_numbers` as a static method.
+   - `greet_class` as a class method.
+   - `greet_user` as an instance method.
+3. **Instance**: Create an instance `operation` of the `Operations` class.
+4. **Associations**: Link the instance `operation` to the `Operations` class.
+
+The UML diagram will reflect these elements without any additional classes, interfaces, or relationships beyond what's present in the code.

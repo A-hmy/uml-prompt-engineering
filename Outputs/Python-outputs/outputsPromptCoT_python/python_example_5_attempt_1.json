@@ -1,0 +1,90 @@
+<think>
+Okay, so I need to create a UML class diagram based on the provided Python code. Let me go through the code step by step to understand what each part represents.
+
+First, I see two classes: Worker and Developer. Worker is an abstract class, which I know in Python means it can't be instantiated on its own. Developer extends Worker, so it's a concrete class that inherits from Worker.
+
+Looking at the attributes, Worker has full_name and income. These are instance variables, so in UML, they'll be attributes of the Worker class. Developer doesn't have any additional attributes, so it doesn't add anything beyond what Worker has.
+
+Next, the methods. Worker has __init__, show_name, is_high_income, and work. Since work is an abstract method in Worker, it must be implemented by its subclasses. In Python, that's done by defining it as abstract using the @abstractmethod decorator, but in UML, abstract methods are just methods without an implementation. So in the UML, work() will be an abstract method in Worker and implemented in Developer.
+
+The __init__ method in Worker takes full_name and income as parameters. These are the constructor parameters, so in UML, the __init__ method will have these parameters as well.
+
+Show_name is a method that returns the full_name, so it's a simple getter method. Is_high_income returns a boolean indicating if the income is high, which I think is determined by comparing the income to a certain threshold, but the code doesn't show that logic, so in UML, it's just a method that returns a boolean.
+
+Developer, being a subclass of Worker, inherits all the methods and attributes of Worker. Since it doesn't add any new attributes, the only thing it does is implement the abstract work() method. So in the UML, Developer will have the same attributes and methods as Worker plus its own implementation of work().
+
+Now, for the relationships. Since Developer inherits from Worker, there's an inheritance relationship. In UML, that's shown with a solid line from Developer to Worker.
+
+I don't see any other relationships like associations or compositions in the code. The methods don't reference other classes, so there are no dependencies or aggregations to include.
+
+Putting it all together, the UML should have two classes: Worker and Developer. Worker has attributes full_name and income, along with the __init__, show_name, is_high_income, and work methods. Developer extends Worker and implements the work method.
+
+I need to make sure that all elements are included without duplication. The attributes and methods are correctly placed in their respective classes. The inheritance is clearly shown with the extends keyword in UML.
+
+So the final UML should accurately represent the structure of the Python code, showing the inheritance and the methods each class has.
+</think>
+
+```json
+{
+  "classes": [
+    {
+      "name": "Worker",
+      "attributes": [
+        {
+          "name": "full_name",
+          "type": "String"
+        },
+        {
+          "name": "income",
+          "type": "Integer"
+        }
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "parameters": [
+            {
+              "name": "full_name",
+              "type": "String"
+            },
+            {
+              "name": "income",
+              "type": "Integer"
+            }
+          ]
+        },
+        {
+          "name": "show_name",
+          "return_type": "String"
+        },
+        {
+          "name": "is_high_income",
+          "return_type": "Boolean"
+        },
+        {
+          "name": "work",
+          "return_type": "String",
+          "abstract": true
+        }
+      ]
+    },
+    {
+      "name": "Developer",
+      "parent": "Worker",
+      "methods": [
+        {
+          "name": "work",
+          "return_type": "String"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "type": "Inheritance",
+      "source": "Developer",
+      "target": "Worker"
+    }
+  ]
+}
+```

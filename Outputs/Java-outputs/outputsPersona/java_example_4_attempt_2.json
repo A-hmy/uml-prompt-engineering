@@ -1,0 +1,72 @@
+<think>
+Okay, so I need to create a UML class diagram from the given Java code. Let me start by understanding what each part of the code does.
+
+First, there's the User class. It has an int called userID set to 430. So in UML, I'll represent this with a class User and an attribute userID of type int.
+
+Next, the Metrics class has two float attributes: metricOne and metricTwo, both with default values. It also has a User object called userRecord. So Metrics will be another class with those attributes and a composition relationship with User since it contains a User object.
+
+Then, there's DataPoints which extends User. It has two float attributes, dataOne and dataTwo. Since DataPoints is a subclass of User, I'll show an inheritance relationship in UML. It doesn't have any methods, so I'll note that.
+
+I need to make sure I include all classes, their attributes with types, and any relationships. No methods are present in the code, so I won't add any method boxes. The relationships are inheritance (DataPoints extends User), composition (Metrics has a User).
+
+I should check for any dependencies or associations, but in this case, the only relationships are inheritance and composition. No other classes are involved, so I don't need to add any other connections.
+
+I must ensure each class is defined once, attributes are correctly typed, and relationships accurately reflect the code. No extra elements should be added, only what's explicitly there.
+</think>
+
+{
+  "classes": [
+    {
+      "name": "User",
+      "attributes": [
+        {
+          "name": "userID",
+          "type": "int"
+        }
+      ]
+    },
+    {
+      "name": "Metrics",
+      "attributes": [
+        {
+          "name": "metricOne",
+          "type": "float"
+        },
+        {
+          "name": "metricTwo",
+          "type": "float"
+        },
+        {
+          "name": "userRecord",
+          "type": "User"
+        }
+      ]
+    },
+    {
+      "name": "DataPoints",
+      "attributes": [
+        {
+          "name": "dataOne",
+          "type": "float"
+        },
+        {
+          "name": "dataTwo",
+          "type": "float"
+        }
+      ],
+      "extends": "User"
+    }
+  ],
+  "relationships": [
+    {
+      "name": "Composition",
+      "from": "Metrics",
+      "to": "User"
+    },
+    {
+      "name": "Inheritance",
+      "from": "DataPoints",
+      "to": "User"
+    }
+  ]
+}

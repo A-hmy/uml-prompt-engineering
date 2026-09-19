@@ -1,0 +1,29 @@
+To create the UML class diagram for the provided Java code, follow these steps:
+
+1. **Identify the Class**: The code defines a single class `Employee`.
+
+2. **List Attributes**:
+   - `name` of type `String`
+   - `salary` of type `double`
+   - `age` of type `int`
+   - `department` of type `String`
+
+3. **List Methods**:
+   - `displayDetails()`: Prints employee details using `System.out.println`.
+
+4. **Analyze Relationships**: There are no other classes, interfaces, or relationships (inheritance, composition, etc.) in the code.
+
+5. **Prepare the UML Diagram**: Draw a single class `Employee` with the listed attributes and method.
+
+**Final UML Class Diagram**:
+
+```plaintext
+Employee
+Attributes
+    name: String
+    salary: double
+    age: int
+    department: String
+Methods
+    displayDetails()
+```

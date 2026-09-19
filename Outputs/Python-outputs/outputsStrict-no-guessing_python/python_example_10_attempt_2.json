@@ -1,0 +1,71 @@
+<think>
+Okay, so I need to generate a UML class diagram from the given Python code. Let me start by reading through the code carefully.
+
+First, I see two classes: Compensation and Worker. There's also an instance where a Compensation object is created and assigned to a Worker. 
+
+Looking at the Compensation class, it has an __init__ method that takes monthly_income and assigns it to self.monthly_income. There's also an annual_income method which returns monthly_income multiplied by 12. So, the Compensation class has an attribute monthly_income of type int and a method annual_income() that returns an int.
+
+Next, the Worker class has an __init__ method that takes full_name and compensation. It assigns these to self.full_name and self.compensation, respectively. The compensation is an instance of the Compensation class. The Worker class also has a total_income method that calls self.compensation.annual_income() and returns the result.
+
+Now, I need to represent this in UML. I'll start by listing all the classes. There are two: Compensation and Worker. 
+
+For the Compensation class, I'll note its attributes: monthly_income as an int. Its methods are annual_income(), which returns an int. 
+
+The Worker class has attributes full_name (string) and compensation (which is a Compensation object). Its methods are total_income(), which returns an int.
+
+Looking at the relationships, the Worker has a composition with the Compensation object because the Worker likely "owns" the Compensation instance, and the two are tightly coupled. So, in UML, I'll show a composition relationship between Worker and Compensation.
+
+I don't see any inheritance here, so I won't include that. There are no interfaces mentioned, so I'll leave that out too. Dependencies or associations aren't present beyond the composition.
+
+I need to make sure each class is defined once, all attributes and methods are included, and relationships are accurately represented. I won't assume any default modifiers or details not explicitly written in the code.
+
+So, putting it all together, the UML diagram will have two classes, each with their attributes and methods, and a composition link between them.
+</think>
+
+```json
+{
+  "classes": [
+    {
+      "name": "Compensation",
+      "attributes": [
+        {
+          "name": "monthly_income",
+          "type": "int"
+        }
+      ],
+      "methods": [
+        {
+          "name": "annual_income",
+          "return_type": "int"
+        }
+      ]
+    },
+    {
+      "name": "Worker",
+      "attributes": [
+        {
+          "name": "full_name",
+          "type": "str"
+        },
+        {
+          "name": "compensation",
+          "type": "Compensation"
+        }
+      ],
+      "methods": [
+        {
+          "name": "total_income",
+          "return_type": "int"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Worker",
+      "target": "Compensation",
+      "type": "composition"
+    }
+  ]
+}
+```

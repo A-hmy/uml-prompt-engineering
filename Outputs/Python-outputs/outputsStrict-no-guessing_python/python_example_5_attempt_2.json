@@ -1,0 +1,82 @@
+<think>
+Okay, I need to generate a UML class diagram from the given Python code. Let me start by understanding the code step by step.
+
+First, I see that the code imports ABC and abstractmethod from the abc module. This tells me that Worker is an abstract base class because it inherits from ABC and has an abstract method.
+
+Looking at the Worker class, it has an __init__ method that takes full_name and income, assigning them to instance variables. So, in UML, Worker will have these attributes. The work method is abstract, so in UML, it should be an abstract method. There's also a show_name method that returns a string, and is_high_income which checks if income is over 3000.
+
+Next, the Developer class inherits from Worker. Since it's a subclass, I'll note the inheritance relationship. The work method in Developer is overridden to return a specific string, so that method is concrete. I'll include this method in the Developer class.
+
+The code then creates an instance of Developer with name "John" and income 3500. It calls show_name, work, and is_high_income. So, the attributes and methods are used, which means they should be included in the UML.
+
+Now, I'll list all classes, interfaces, and their attributes and methods. Worker has full_name, income, show_name, is_high_income, and work (abstract). Developer has the same attributes plus an overridden work method.
+
+For relationships, Developer inherits from Worker, so I'll represent that with a generalization arrow from Worker to Developer. There are no other relationships mentioned, so I won't include any associations or compositions.
+
+I need to make sure each element is only listed once and only includes what's explicitly in the code. No defaults or assumptions should be added. The JSON should accurately reflect the UML elements without any extra text or explanations.
+
+Finally, I'll structure the JSON with classes, interfaces, attributes, methods, and relationships. Each class will have its attributes and methods, and the inheritance will be clearly shown.
+</think>
+
+```json
+{
+  "classes": [
+    {
+      "name": "Worker",
+      "attributes": [
+        {
+          "name": "full_name",
+          "type": "str"
+        },
+        {
+          "name": "income",
+          "type": "int"
+        }
+      ],
+      "methods": [
+        {
+          "name": "work",
+          "is_abstract": true
+        },
+        {
+          "name": "show_name",
+          "return_type": "str"
+        },
+        {
+          "name": "is_high_income",
+          "return_type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "Developer",
+      "parent": "Worker",
+      "attributes": [
+        {
+          "name": "full_name",
+          "type": "str"
+        },
+        {
+          "name": "income",
+          "type": "int"
+        }
+      ],
+      "methods": [
+        {
+          "name": "work",
+          "return_type": "str"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Developer",
+      "target": "Worker",
+      "type": "generalization",
+      "source_type": "class",
+      "target_type": "class"
+    }
+  ]
+}
+```

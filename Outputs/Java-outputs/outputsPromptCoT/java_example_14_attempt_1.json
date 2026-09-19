@@ -1,0 +1,52 @@
+<think>
+Okay, so I need to create a UML class diagram based on the provided Java code. Let me go through the steps carefully.
+
+First, I'll look at the code. It's a single class called Employee. So, the class diagram should only have one class, right?
+
+Next, I'll list the attributes. The code has four attributes: name, salary, age, and department. Their types are String, double, int, and String respectively. I need to make sure each attribute is included with its correct type.
+
+Then, I'll consider the methods. There's a method called displayDetails() that prints employee details. So, I'll add that method to the class.
+
+Now, checking for relationships. The code doesn't show any other classes, interfaces, or inheritance. There are no composite structures like lists or sets, so no aggregation or composition relationships. Also, there are no dependencies or associations beyond what's within the class itself. So, the class is standalone with no connections to other elements.
+
+Putting it all together, the UML class diagram will have a single class Employee with the four attributes and one method. Since there are no other classes or relationships, the diagram is straightforward.
+
+I need to make sure I don't include anything that's not in the code. No extra elements or relationships. Just the Employee class with its attributes and method.
+
+Finally, I'll structure this into a JSON object as required, making sure each attribute and method is correctly represented.
+</think>
+
+```json
+{
+  "classes": [
+    {
+      "class": "Employee",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "salary",
+          "type": "double"
+        },
+        {
+          "name": "age",
+          "type": "int"
+        },
+        {
+          "name": "department",
+          "type": "String"
+        }
+      ],
+      "methods": [
+        {
+          "name": "displayDetails",
+          "parameters": [],
+          "returnType": "void"
+        }
+      ]
+    }
+  ]
+}
+```

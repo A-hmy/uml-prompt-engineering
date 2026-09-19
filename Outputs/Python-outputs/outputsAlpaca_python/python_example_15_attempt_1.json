@@ -1,0 +1,96 @@
+```json
+{
+  "classes": [
+    {
+      "name": "Product",
+      "attributes": [
+        {
+          "name": "quantity",
+          "type": "int"
+        }
+      ],
+      "methods": [
+        {
+          "name": "get_quantity",
+          "return_type": "int"
+        }
+      ]
+    },
+    {
+      "name": "Factory",
+      "attributes": [],
+      "methods": [
+        {
+          "name": "build_product",
+          "return_type": "Product"
+        }
+      ]
+    }
+  ],
+  "associations": [
+    {
+      "from": "Factory",
+      "to": "Product",
+      "type": "realization",
+      "direction": "Factory -> Product"
+    }
+  ]
+}
+```
+
+Okay, I need to generate a UML class diagram for the provided Python code. Let me start by understanding the code structure.
+
+First, there's a class called Product. It has an __init__ method that takes a quantity and assigns it to self.quantity. There's also a get_quantity method that returns the quantity. So, Product has an attribute quantity of type int and a method get_quantity returning int.
+
+Next, there's a Factory class. It has a build_product method that returns a Product instance with quantity 13. So, Factory's method build_product returns a Product.
+
+Looking at the usage, a Factory instance is created, build_product is called, and the result is a Product object. So, the Factory is creating a Product, which means there's a realization relationship between Factory and Product. The Factory is the one creating the Product, so the direction is Factory -> Product.
+
+I should make sure each class is defined once. So, Product and Factory are both included. Their attributes and methods are listed without duplication.
+
+For associations, the main relationship is the realization between Factory and Product. There are no other associations like inheritance or composition here. The Factory doesn't contain any Products, so no composition or aggregation.
+
+I should avoid any redundant operations or classes. The code doesn't have any other classes or relationships beyond what's described.
+
+So, the UML should have two classes: Product with its attributes and methods, and Factory with its method. The association is a realization from Factory to Product.
+
+I think that's all. I'll structure the JSON accordingly, making sure each class is properly defined with their details and the association is correctly noted.
+```json
+{
+  "classes": [
+    {
+      "name": "Product",
+      "attributes": [
+        {
+          "name": "quantity",
+          "type": "int"
+        }
+      ],
+      "methods": [
+        {
+          "name": "get_quantity",
+          "return_type": "int"
+        }
+      ]
+    },
+    {
+      "name": "Factory",
+      "attributes": [],
+      "methods": [
+        {
+          "name": "build_product",
+          "return_type": "Product"
+        }
+      ]
+    }
+  ],
+  "associations": [
+    {
+      "from": "Factory",
+      "to": "Product",
+      "type": "realization",
+      "direction": "Factory -> Product"
+    }
+  ]
+}
+```

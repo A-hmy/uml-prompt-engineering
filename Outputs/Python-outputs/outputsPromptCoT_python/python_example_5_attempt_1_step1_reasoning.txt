@@ -1,0 +1,36 @@
+To create the UML class diagram, we'll identify the key elements from the provided Python code:
+
+1. **Classes**:
+   - `Worker`: An abstract class with methods and attributes.
+   - `Developer`: A concrete subclass of `Worker` with specific method implementations.
+
+2. **Attributes**:
+   - `full_name` and `income` in `Worker`.
+   - No additional attributes in `Developer`.
+
+3. **Methods**:
+   - `__init__`, `show_name`, `is_high_income` in `Worker`.
+   - `work` in both `Worker` (abstract) and `Developer` (implemented).
+
+4. **Relationships**:
+   - **Inheritance**: `Developer` inherits from `Worker`.
+
+Here's the UML class diagram:
+
+```plaintext
+class Worker {
+    +full_name: String
+    +income: Integer
+
+    method __init__(full_name: String, income: Integer)
+    method show_name() -> String
+    method is_high_income() -> Boolean
+    method work() -> String
+}
+
+class Developer extends Worker {
+    method work() -> String
+}
+```
+
+This diagram captures all classes, their attributes, methods, and the inheritance relationship between them.

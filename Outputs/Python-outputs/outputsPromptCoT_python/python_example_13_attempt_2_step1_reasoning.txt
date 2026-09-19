@@ -1,0 +1,30 @@
+To create the UML class diagram, we analyze the given Python code to identify classes, their attributes, methods, and relationships.
+
+1. **Identify Classes**:
+   - **Item**: A class with an attribute `data` of type `str`.
+   - **Container**: A class with an attribute `content` (assumed to be a list of `Item` objects) and a method `method_1` that creates an `Item` instance.
+
+2. **Identify Relationships**:
+   - **Dependency**: The `Container` class depends on the `Item` class because `method_1` creates an `Item` instance.
+
+3. **Attributes and Methods**:
+   - **Item**:
+     - `data: str`
+   - **Container**:
+     - `content: list<Item>`
+     - `method_1(): None`
+
+4. **Exclude Irrelevant Elements**:
+   - The interface mentioned in the requirements isn't used in the code, so it's excluded.
+
+**Final UML Class Diagram**:
+
+- **Class Item**:
+  - Attribute: `data: str`
+  
+- **Class Container**:
+  - Attribute: `content: list<Item>`
+  - Method: `method_1(): None`
+  
+- **Dependency**:
+  - `Container` depends on `Item` (indicated by a dashed arrow from `Container` to `Item`).

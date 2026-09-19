@@ -1,0 +1,60 @@
+<think>
+Okay, so I need to create a UML class diagram from the given Python code. Let me start by understanding what the code is doing.
+
+First, I see a class called CustomClass. It has an __init__ method, which initializes several attributes. Let me list out those attributes with their types.
+
+The __init__ method sets self.count to 100, which is an integer. Then self._threshold is set to 200, also an integer but with a leading underscore, indicating it's meant to be private. Next, self.__secret_key is assigned the string "xyz", with double underscores, so that's a private attribute. Then self._aa is 'A', a single character string, and self.__bb is 10.5, a float.
+
+So, the CustomClass has these attributes: count, _threshold, __secret_key, _aa, and __bb. Their types are int, int, str, str, and float respectively.
+
+Now, I need to represent this in UML. Each attribute should be listed with its type. Since some have underscores, I know in UML, visibility isn't shown in attribute names, so I'll just list them as they are.
+
+Next, I should check for any methods. The code only shows __init__, so that's the only method. In UML, __init__ is typically named <init>, so I'll include that method with no parameters since it's the constructor.
+
+I don't see any inheritance or realization relationships here. The class doesn't inherit from any other class, and there are no interfaces or abstract classes involved. So, no inheritance or realization arrows.
+
+Are there any dependencies or associations? The code doesn't show any imports or external dependencies, so I don't think there are any. Also, there are no other classes referenced, so no associations beyond what's within the class itself.
+
+Composition or aggregation? The attributes don't seem to be composite structures; they're simple data types or strings. So, no composition or aggregation relationships.
+
+Putting it all together, the UML class diagram will have one class, CustomClass, with the listed attributes and the <init> method. No other classes, methods, or relationships are present in the code, so I don't need to include anything else.
+
+I should make sure not to include anything that's not in the code. No extra elements or relationships. Just the class with its attributes and method.
+</think>
+
+{
+  "classes": [
+    {
+      "name": "CustomClass",
+      "attributes": [
+        {
+          "name": "count",
+          "type": "int"
+        },
+        {
+          "name": "_threshold",
+          "type": "int"
+        },
+        {
+          "name": "__secret_key",
+          "type": "String"
+        },
+        {
+          "name": "_aa",
+          "type": "String"
+        },
+        {
+          "name": "__bb",
+          "type": "float"
+        }
+      ],
+      "methods": [
+        {
+          "name": "<init>",
+          "parameters": []
+        }
+      ]
+    }
+  ]
+}
+```

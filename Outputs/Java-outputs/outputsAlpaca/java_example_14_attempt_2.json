@@ -1,0 +1,92 @@
+```json
+{
+  "classes": [
+    {
+      "name": "Employee",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "String",
+          "visibility": "public"
+        },
+        {
+          "name": "salary",
+          "type": "double",
+          "visibility": "private"
+        },
+        {
+          "name": "age",
+          "type": "int",
+          "visibility": "protected"
+        },
+        {
+          "name": "department",
+          "type": "String",
+          "visibility": "public"
+        }
+      ],
+      "methods": [
+        {
+          "name": "displayDetails",
+          "returnType": "void",
+          "parameters": []
+        }
+      ]
+    }
+  ]
+}
+```
+
+Okay, so I need to generate a UML class diagram for the provided Java code. Let me start by understanding what the code does. The code defines a class called Employee with several attributes and a method. 
+
+First, I'll look at the attributes. The Employee class has name, salary, age, and department. The visibility modifiers are public, private, protected, and public respectively. So in UML, each attribute will be listed with its type and visibility.
+
+Next, the methods. There's a method called displayDetails which doesn't return anything and doesn't take any parameters. So in UML, this will be a method with a void return type and no parameters.
+
+Now, I need to make sure that each class is defined only once. Since there's only one class here, that's straightforward. 
+
+I should also check for any relationships. The code doesn't show any other classes that this Employee class interacts with, like inheritance, realization of interfaces, or associations. So in the UML, there won't be any relationships shown between classes.
+
+I need to avoid redundancy. Each attribute and method is listed once, so that's good. There are no duplicate operations or classes here.
+
+Putting it all together, the UML class diagram will have one class, Employee, with its attributes and method. Each attribute will have its type and visibility specified, and the method will have its name, return type, and parameters.
+
+I think that's all. I don't see any other elements that need to be included based on the provided code.
+```json
+{
+  "classes": [
+    {
+      "name": "Employee",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "String",
+          "visibility": "public"
+        },
+        {
+          "name": "salary",
+          "type": "double",
+          "visibility": "private"
+        },
+        {
+          "name": "age",
+          "type": "int",
+          "visibility": "protected"
+        },
+        {
+          "name": "department",
+          "type": "String",
+          "visibility": "public"
+        }
+      ],
+      "methods": [
+        {
+          "name": "displayDetails",
+          "returnType": "void",
+          "parameters": []
+        }
+      ]
+    }
+  ]
+}
+```

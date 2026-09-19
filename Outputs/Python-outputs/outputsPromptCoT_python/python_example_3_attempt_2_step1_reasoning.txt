@@ -1,0 +1,35 @@
+To create the UML class diagram, we analyze the given Python code and identify the necessary elements:
+
+1. **Classes**:
+   - `GeometricFigure` (Abstract Class)
+   - `Square` (Concrete Class)
+
+2. **Attributes**:
+   - `side_length` in `Square` (type: `int`)
+
+3. **Methods**:
+   - `__init__` in `Square`
+   - `area` in both `GeometricFigure` and `Square`
+   - `perimeter` in `Square`
+
+4. **Relationships**:
+   - Inheritance: `Square` inherits from `GeometricFigure`.
+
+Here's the step-by-step UML class diagram:
+
+- **Class GeometricFigure**:
+  - **Abstract Method**:
+    - `area()`: Returns the area of the geometric figure.
+
+- **Class Square**:
+  - **Attribute**:
+    - `side_length`: An integer representing the side length of the square.
+  - **Methods**:
+    - `__init__(self, side_length)`: Initializes the square with a given side length.
+    - `area(self)`: Returns the area of the square.
+    - `perimeter(self)`: Returns the perimeter of the square.
+
+- **Inheritance**:
+  - `Square` inherits from `GeometricFigure`, indicating that `Square` is a specific type of geometric figure.
+
+This UML diagram accurately represents the structure and behavior of the provided Python code.

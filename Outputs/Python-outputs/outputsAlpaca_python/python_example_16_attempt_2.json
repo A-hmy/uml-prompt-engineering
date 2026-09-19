@@ -1,0 +1,142 @@
+{
+    "classes": [
+        {
+            "name": "CustomClass",
+            "attributes": [
+                {
+                    "name": "count",
+                    "type": "int",
+                    "visibility": "public"
+                },
+                {
+                    "name": "threshold",
+                    "type": "int",
+                    "visibility": "private"
+                },
+                {
+                    "name": "secret_key",
+                    "type": "str",
+                    "visibility": "private"
+                },
+                {
+                    "name": "aa",
+                    "type": "str",
+                    "visibility": "protected"
+                },
+                {
+                    "name": "bb",
+                    "type": "float",
+                    "visibility": "protected"
+                }
+            ],
+            "methods": [
+                {
+                    "name": "__init__",
+                    "parameters": [
+                        {
+                            "name": "self"
+                        }
+                    ],
+                    "visibility": "public"
+                }
+            ]
+        }
+    ]
+}
+
+Okay, so I need to generate a UML class diagram for the provided Python code. Let me start by looking at the code. The code defines a class called CustomClass. 
+
+In the __init__ method, there are several attributes being initialized. Let's list them out:
+
+- count is set to 100. That's an integer, and it's public because it's directly accessed without any underscores.
+- _threshold is set to 200. The underscore here means it's private, so in UML, I'll denote it as private.
+- __secret_key is set to "xyz". Double underscores mean it's a private attribute, so I'll mark it as private.
+- _aa is set to 'A'. Again, private.
+- __bb is set to 10.5. Private as well.
+
+Wait, but in Python, variables starting with a single underscore are protected, and double underscores are private. So in UML, I need to represent the visibility correctly. Public attributes are shown without any modifiers, protected with a #, and private with a -.
+
+So for each attribute:
+
+- count: public, type int
+- _threshold: private, type int
+- __secret_key: private, type str
+- _aa: protected, type str
+- __bb: private, type float
+
+Wait, no. Wait, in Python, _aa is protected, right? Because a single underscore means protected. So in UML, I should mark it as protected. Similarly, __bb is private.
+
+So the attributes in the UML should reflect their visibility. Let me structure that.
+
+Next, the methods. The __init__ method is public and takes self as a parameter. So in the methods section, I'll include that.
+
+Now, the task is to create a UML class diagram. The output should be a JSON object with a list of classes. Each class has a name, attributes, and methods.
+
+So the class name is CustomClass. Its attributes are as listed above, with their types and visibilities. The methods include __init__.
+
+I need to make sure that each attribute is listed only once, and relationships are included if there are any. But in this case, the code doesn't show any inheritance, realization, or other relationships. So the class stands alone.
+
+I should avoid any redundant operations or classes. Since there are no other classes referenced, the diagram will only include CustomClass.
+
+Let me double-check the attributes:
+
+- count: public, int
+- _threshold: private, int
+- __secret_key: private, str
+- _aa: protected, str
+- __bb: private, float
+
+Yes, that's all. And the __init__ method is correctly included.
+
+So putting it all together, the JSON structure should have a list of classes, each with their attributes and methods. Each attribute is an object with name, type, and visibility. Each method is an object with name, parameters, and visibility.
+
+I think that's all. No other classes or relationships are present in the input, so the output should be straightforward.
+</think>
+
+```json
+{
+    "classes": [
+        {
+            "name": "CustomClass",
+            "attributes": [
+                {
+                    "name": "count",
+                    "type": "int",
+                    "visibility": "public"
+                },
+                {
+                    "name": "threshold",
+                    "type": "int",
+                    "visibility": "private"
+                },
+                {
+                    "name": "secret_key",
+                    "type": "str",
+                    "visibility": "private"
+                },
+                {
+                    "name": "aa",
+                    "type": "str",
+                    "visibility": "protected"
+                },
+                {
+                    "name": "bb",
+                    "type": "float",
+                    "visibility": "private"
+                }
+            ],
+            "methods": [
+                {
+                    "name": "__init__",
+                    "parameters": [
+                        {
+                            "name": "self"
+                        }
+                    ],
+                    "visibility": "public"
+                }
+            ]
+        }
+    ]
+}
+```
