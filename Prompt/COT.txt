@@ -13,7 +13,7 @@ Java/ Python code:
 Think step by step and write only your step-by-step reasoning.
 
 PROMPT 2:
-Here is your step-by-step reasoning about the Java source code:
+Here is your step-by-step reasoning about the Java/Python source code:
 
 {step1_response}
 
