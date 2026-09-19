@@ -1,0 +1,88 @@
+[
+    {
+        "ClassInterface": "Class",
+        "name": "Box",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "superclasses": [],
+        "variables": [],
+        "methods": [
+            {
+                "name": "__init__",
+                "Visibility": "",
+                "IsStatic": "",
+                "returnType": [],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Gadget",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "superclasses": [],
+        "variables": [],
+        "methods": [
+            {
+                "name": "__init__",
+                "Visibility": "",
+                "IsStatic": "",
+                "returnType": [],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    }
+                ]
+            },
+            {
+                "name": "operate",
+                "Visibility": "public",
+                "IsStatic": "",
+                "returnType": [],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    }
+                ]
+            },
+            {
+                "name": "stop",
+                "Visibility": "public",
+                "IsStatic": "",
+                "returnType": [],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    }
+                ]
+            }
+        ]
+    }
+]
+
+[
+    {
+        "Relationship": "Aggregation",
+        "Source": "Gadget",
+        "Target": "Box",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]
